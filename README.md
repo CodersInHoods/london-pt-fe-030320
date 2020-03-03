@@ -7,3 +7,9 @@ To do that, run this in your terminal:
 ```git
 git pull git@github.com:CodersInHoods/london-pt-fe-030320.git master
 ```
+
+or if you are using HTTPS
+
+```git
+git pull https://github.com/CodersInHoods/london-pt-fe-030320.git master
+```
