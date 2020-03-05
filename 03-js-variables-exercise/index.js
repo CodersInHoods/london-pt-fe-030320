@@ -1,1 +1,2 @@
-console.log("vroom doom");
+const username = "jom";
+let age = 25;
