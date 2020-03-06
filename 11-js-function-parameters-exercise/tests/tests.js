@@ -24,7 +24,7 @@ describe("myAge", () => {
 	});
 
 	test("myAge should log a valid string", () => {
-		myName(16);
+		myAge(16);
 
 		expect(global.console.log).toHaveBeenCalledWith("I'm 16 years old");
 	});
@@ -37,7 +37,7 @@ describe("aboutMe", () => {
 	});
 
 	test("aboutMe should log a valid string", () => {
-		myName("Lviv", "Ukraine");
+		aboutMe("Lviv", "Ukraine");
 
 		expect(global.console.log).toHaveBeenCalledWith("I'm from Lviv, Ukraine");
 	});

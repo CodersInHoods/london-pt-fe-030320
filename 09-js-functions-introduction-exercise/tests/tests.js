@@ -13,34 +13,34 @@ describe("myFavoriteAnimal", () => {
 });
 
 // Exercise 2
-describe("myAnimal", () => {
-	test("myAnimal is declared and log a string with your favorite animal", () => {
-		myAnimal();
+describe("myAnimalWithLog", () => {
+	test("myAnimalWithLog is declared and log a string with your favorite animal", () => {
+		myAnimalWithLog();
 
 		expect(global.console.log).toHaveBeenCalledWith(
-			"My favorite cat is " + myFavoriteAnimal
+			"My favorite animal is " + myFavoriteAnimal
 		);
 	});
 });
 
 // Exercise 3
-describe("myAnimal", () => {
-	test("myAnimal is declared and warn a string with your favorite animal", () => {
-		myAnimal();
+describe("myAnimalWithWarn", () => {
+	test("myAnimalWithWarn is declared and warn a string with your favorite animal", () => {
+		myAnimalWithWarn();
 
 		expect(global.console.warn).toHaveBeenCalledWith(
-			"My favorite cat is " + myFavoriteAnimal
+			"My favorite animal is " + myFavoriteAnimal
 		);
 	});
 });
 
 // Exercise 4
-describe("myAnimal", () => {
-	test("myAnimal is declared and error a string with your favorite animal", () => {
-		myAnimal();
+describe("myAnimalWithError", () => {
+	test("myAnimalWithError is declared and error a string with your favorite animal", () => {
+		myAnimalWithError();
 
 		expect(global.console.error).toHaveBeenCalledWith(
-			"My favorite cat is " + myFavoriteAnimal
+			"My favorite animal is " + myFavoriteAnimal
 		);
 	});
 });

@@ -8,16 +8,16 @@
 /**
  * Exercise 2
  *
- * create a function "myAnimal", which will have
- * console.log with the message "My favorite cat is `myFavoriteAnimal`"
+ * create a function "myAnimalWithLog", which will have
+ * console.log with the message "My favorite animal is `myFavoriteAnimal`"
  * Check developer tools in your browser for the message
  */
 
 /**
  * Exercise 3
  *
- * create a function "myAnimal", which will have
- * console.warn with the message "My favorite cat is `myFavoriteAnimal`"
+ * create a function "myAnimalWithWarn", which will have
+ * console.warn with the message "My favorite animal is `myFavoriteAnimal`"
  * Check developer tools in your browser for the message
  * and see the difference with console.log
  */
@@ -25,8 +25,8 @@
 /**
  * Exercise 4
  *
- * create a function "myAnimal", which will have
- * console.error with the message "My favorite cat is `myFavoriteAnimal`"
+ * create a function "myAnimalWithError", which will have
+ * console.error with the message "My favorite animal is `myFavoriteAnimal`"
  * Check developer tools in your browser for the message
  * and see the difference with console.log
  */
