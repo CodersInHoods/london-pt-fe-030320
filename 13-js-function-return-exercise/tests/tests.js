@@ -26,21 +26,21 @@ describe("minNumber", () => {
 //Exercise 4
 describe("randomNumber", () => {
 	test("should return random number", () => {
-		const randomNumber = randomNumber();
+		const number = randomNumber();
 
-		expect(randomNumber !== randomNumber()).toBeTruthy();
+		expect(number !== randomNumber()).toBeTruthy();
 	});
 
 	test("should return number between 1 and 10", () => {
-		const randomNumber = randomNumber();
+		const number = randomNumber();
 
-		expect(randomNumber > 0 && randomNumber <= 10).toBeTruthy();
+		expect(number > 0 && number <= 10).toBeTruthy();
 	});
 
 	test("returned number should be integer", () => {
-		const randomNumber = randomNumber();
+		const number = randomNumber();
 
-		expect(randomNumber === Math.floor(randomNumber)).toBeTruthy();
+		expect(number === Math.floor(number)).toBeTruthy();
 	});
 });
 
