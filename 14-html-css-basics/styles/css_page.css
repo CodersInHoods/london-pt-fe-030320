@@ -1,0 +1,23 @@
+/* Text 1 */
+.text_1 {
+    background-color: bisque;
+}
+
+.text_1 {
+    background-color: pink;
+}
+
+/* Text 2 */
+#text {
+    background-color: aquamarine;
+    /* background-color: #7fffd4;
+    background-color: hsl(160, 100%, 75%);
+    background-color: rgb(127, 255, 212);
+    background-color: rgba(127, 255, 212, 1); */
+}
+
+.text_1,
+.text_2 {
+    font-size: 20px;
+}
+

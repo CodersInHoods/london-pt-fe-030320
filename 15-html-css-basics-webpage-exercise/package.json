@@ -1,0 +1,25 @@
+{
+  "name": "test-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "test:dev": "npm run test -- --watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "pre-push": "npm run test"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "fs": "0.0.1-security",
+    "husky": "^4.2.3",
+    "jest": "^24.9.0",
+    "path": "^0.12.7"
+  }
+}
