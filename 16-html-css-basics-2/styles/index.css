@@ -1,0 +1,332 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  padding: 110px 1em 1em;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 90px;
+  background-color: rgb(44, 135, 255);
+  padding: 0 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li a {
+  display: block;
+  padding: 1em;
+  margin: 0 5px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
+  border-radius: 4px;
+  min-width: 100px;
+  text-align: center;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(44, 135, 255);
+}
+
+nav ul li a.active {
+  background-color: #fff;
+  color: rgb(44, 135, 255);
+}
+
+img {
+  width: 1000px;
+  max-width: 90%;
+}
+
+.section_container {
+  margin: 50px auto 0;
+  width: 90%;
+}
+
+.section_container > h1,
+.section_container > p {
+  font-style: italic;
+}
+
+/* Concatenation */
+.title {
+  color: blue;
+}
+
+.medium {
+  /* font-size: 20px; */
+}
+
+.title.medium {
+  /* font-size: 30px; */
+}
+/* ============== */
+
+/* Nested styling */
+.nested_text {
+  font-size: 30px;
+}
+.nested_wrapper .nested_text {
+  background-color: aqua;
+  border-radius: 4px;
+  padding: 1em;
+}
+/* ============== */
+
+/* Select a few elements */
+
+.text_1,
+.text_2,
+.text_3,
+.text_4 {
+  color: aqua;
+}
+/* ============== */
+
+/* Direct parent elements */
+.parent > p {
+  background-color: aqua;
+  border-radius: 4px;
+  padding: 1em;
+}
+/* ============== */
+
+/* Placed immediately */
+.immediately_element + p {
+  background-color: pink;
+  border-radius: 4px;
+  padding: 1em;
+}
+/* ============== */
+
+/* Preceding */
+.preceding ~ p {
+  background-color: pink;
+  border-radius: 4px;
+  padding: 1em;
+}
+/* ============== */
+
+/* [attribute_name=”text_1”] */
+.attribute_wrapper_1 p[data-text="text_1"] {
+  background-color: aqua;
+  border-radius: 4px;
+  padding: 1em;
+}
+/* ============== */
+
+/* [attribute_name~=”text”] */
+.attribute_wrapper_2 p[data-text~="text"] {
+  background-color: pink;
+  border-radius: 4px;
+  padding: 1em;
+}
+/* ============== */
+/* [attribute_name|=”text”] */
+.attribute_wrapper_3 p[data-text|="text"] {
+  background-color: pink;
+  border-radius: 4px;
+  padding: 1em;
+}
+/* ============== */
+/* [attribute_name^=”text”] */
+.attribute_wrapper_4 p[data-text^="text"] {
+  background-color: pink;
+  border-radius: 4px;
+  padding: 1em;
+}
+/* ============== */
+/* [attribute_name^=”text”] */
+.attribute_wrapper_5 p[data-text$="text"] {
+  background-color: pink;
+  border-radius: 4px;
+  padding: 1em;
+}
+/* ============== */
+.attribute_wrapper_6 p[data-text*="coders"] {
+  background-color: pink;
+  border-radius: 4px;
+  padding: 1em;
+}
+/* ============== */
+
+/* Pseudo Classes */
+.pseudo_classes a {
+  font-weight: bold;
+  font-size: 2em;
+  display: inline-block;
+  transition: .3s;
+}
+
+.pseudo_classes h3 {
+  margin-top: 2em;
+}
+
+.active a:active {
+  color: yellow;
+  transform: scale(0.9);
+}
+
+#check_box:checked + label {
+  /* text-decoration: line-through; */
+}
+
+#disable_check_box:disabled + label {
+  /* color: #ddd; */
+}
+
+.first_child li:first-child {
+  /* background-color: bisque; */
+}
+
+.last_child li:last-child {
+  /* background-color: bisque; */
+}
+
+.n_child li:nth-child(2) {
+  /* background-color: bisque; */
+}
+
+.n_child li:nth-child(2n+3) {
+  /* background-color: green; */
+}
+
+.focus a:focus {
+  /* color: green; */
+}
+
+.hover h3:hover {
+  /* color: coral; */
+  /* cursor: pointer; */
+}
+
+.visited a:visited {
+  color: #ddd;
+}
+/* ============== */
+
+/* Pseudo elements */
+.pseudo_elements::before {
+  /* content: '';
+  display: block;
+  border-top: 2px solid green; */
+}
+
+.pseudo_elements::after {
+  /* content: '';
+  display: block;
+  border-top: 2px solid blue; */
+}
+
+.pseudo_elements::first-letter {
+  font-size: 3em;
+  font-weight: bold;
+  color: red;
+}
+
+.pseudo_elements::first-line {
+  /* font-weight: bold;
+  color: red; */
+}
+
+input::placeholder {
+  /* color: green; */
+}
+/* ============== */
+
+/* Absolute units */
+.absolute_units p {
+  background-color: coral;
+}
+
+.cm {
+  /* width: 10cm; */
+}
+
+.mm {
+  /* width: 50mm; */
+}
+
+.in {
+  /* width: 5in; */
+}
+
+.px {
+  /* width: 300px; */
+}
+
+.pt {
+  /* width: 300pt; */
+}
+
+.pc {
+  /* width: 40pc;  */
+}
+/* ============== */
+
+/* Responsive units */
+
+/* html {
+  font-size: 20px;
+} */
+
+.responsive_units {
+  font-size: 14px;
+}
+
+.responsive_units h3 {
+  margin-top: 20px;
+}
+
+.em {
+  /* font-size: 2em; */
+}
+
+.ex {
+  /* font-size: 2ex; */
+}
+
+.ch {
+  /* font-size: 2ch; */
+}
+
+.rem {
+  /* font-size: 2rem; */
+}
+
+.vw_vh {
+  /* width: 50vw; */
+  /* height: 50vh; */
+  background-color: palevioletred;
+}
+
+.vmin {
+  /* width: 50vmin; */
+  /* height: 50vmin; */
+  background-color: paleturquoise;
+}
+
+.vmax {
+  /* width: 50vmax; */
+  /* height: 50vmax; */
+  background-color: peachpuff;
+}
+/* ============== */

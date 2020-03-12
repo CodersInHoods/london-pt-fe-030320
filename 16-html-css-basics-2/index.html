@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- meta tags provide instructions for how to render your page in a browser -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon.png">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Coders In Hoods || Lesson 1</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html" class="active">Advance selectors</a></li>
+            <li><a href="./pseudo_classes.html">Pseudo classes</a></li>
+            <li><a href="./pseudo_elements.html">Pseudo elements</a></li>
+            <li><a href="./absolute_units.html">Absolute units</a></li>
+            <li><a href="./responsive_units.html">Responsive units</a></li>
+        </ul>
+    </nav>
+    <!-- Concatenation -->
+    <div class="section_container">
+        <h1>Concatenation styling</h1>
+        <p class="title">Text</p>
+        <p class="medium">Text</p>
+        <p class="title medium">Text concatenated styles</p>
+    </div>
+
+    <!-- Nested styling -->
+    <div class="section_container">
+        <h1>Nested styling</h1>
+        <p class="nested_text">Not nested text</p>
+        <div class="nested_wrapper">
+            <p class="nested_text">Nested text into div</p>
+        </div>
+    </div>
+
+    <!-- Select a few elements -->
+    <div class="section_container">
+        <h1>Select a few elements</h1>
+        <p class="text_1">Text 1</p>
+        <h3 class="text_2">Text 2</h3>
+        <h4 class="text_3">Text 3</h4>
+        <p class="text_4">Text 4</p>
+    </div>
+
+    <!-- Direct parent elements -->
+    <div class="section_container">
+        <h1>Direct parent elements</h1>
+        <div class="parent">
+            <p>Direct p tag</p>
+            <div>
+                <p>Not direct child p tag</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Placed immediately -->
+    <div class="section_container">
+        <h1>Placed elements</h1>
+        <p class="immediately_element">First p tag</p>
+        <p>Second p tag</p>
+        <p>Third p tag</p>
+        <p>Fourth p tag</p>
+    </div>
+
+    <!-- preceding elements -->
+    <div class="section_container">
+        <h1>Preceding elements</h1>
+        <div class="wrapper">
+            <p class="preceding">First p tag</p>
+            <p>Second p tag</p>
+            <p>Third p tag</p>
+            <p>Fourth p tag</p>
+        </div>
+        <p>Outside wrapper p tag</p>
+    </div>
+    
+    <!-- Attribute selectors -->
+    <div class="section_container">
+        <h1>Attribute selectors [attribute_name=”First name”]</h1>
+        <p>select all elements where attribute "data-text" = “First Name”</p>
+        <div class="attribute_wrapper_1">
+            <p data-text="text_1">First p tag</p>
+            <p data-text="text_2">Second p tag</p>
+        </div>
+    </div>
+    <div class="section_container">
+        <h1>Attribute selectors [attribute_name~=”text”]</h1>
+        <p>select all elements where attribute "attribute_name" contains text</p>
+        <div class="attribute_wrapper_2">
+            <p data-text="some text">First p tag</p>
+            <p data-text="Text">Second p tag</p>
+        </div>
+    </div>
+    <div class="section_container">
+        <h1>Attribute selectors [attribute_name|=”text”]</h1>
+        <p>select all elements where attribute "data-text" starting with  “name”(divider must be “–”, ex. “name-last”)</p>
+        <div class="attribute_wrapper_3">
+            <p data-text="text_test">First p tag - "text_test"</p>
+            <p data-text="Text">Second p tag - "Text"</p>
+            <p data-text="text-test">Third p tag - "text-test"</p>
+        </div>
+    </div>
+    <div class="section_container">
+        <h1>Attribute selectors [attribute_name^=”text”]</h1>
+        <p>select all elements where attribute "data-text" begins with  “name”</p>
+        <div class="attribute_wrapper_4">
+            <p data-text="text_test">First p tag - "text_test"</p>
+            <p data-text="Text">Second p tag - "Text"</p>
+            <p data-text="text-test">Third p tag - "text-test"</p>
+        </div>
+    </div>
+    <div class="section_container">
+        <h1>Attribute selectors [attribute_name$=”text”]</h1>
+        <p>selects every element which data-text attribute value ends with ".pdf"</p>
+        <div class="attribute_wrapper_5">
+            <p data-text="test_text">First p tag - "test_text"</p>
+            <p data-text="Text">Second p tag - "Text"</p>
+            <p data-text="test-text">Third p tag - "test-text"</p>
+        </div>
+    </div>
+    <div class="section_container">
+        <h1>Attribute selectors [attribute_name*=”coders”]</h1>
+        <p>selects every element which data-text attribute contains substring “coders”</p>
+        <div class="attribute_wrapper_6">
+            <p data-text="100 of coders">First p tag - "100 of coders"</p>
+            <p data-text="coders are everywhere">Second p tag - "coders are everywhere"</p>
+            <p data-text="just coders in our team">Third p tag - "just coders in our team"</p>
+        </div>
+    </div>
+</body>
+
+</html>
