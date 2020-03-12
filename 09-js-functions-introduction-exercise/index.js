@@ -52,6 +52,6 @@ myAnimalWithError();
 const myCity = 'London';
 
 function myCity() {
-    window.alert('My favorite cat is ' + );
+    window.alert('My favorite cat is ' + myCity);
 }
 myCity();
