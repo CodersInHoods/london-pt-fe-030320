@@ -5,8 +5,16 @@
  * and return "Hello 'your_name'!"
  */
 
+
+function greet(name) {
+    greets = 'Hello ' + name;
+    return greets;
+}
+greet('benny');
+console.log(greets);
+
 /**
- * Exercise 2
+ * Exercise greet
  *
  * Create a function `loginValidation` which takes age(number)
  * and returns "Welcome!" if the age is 18+ and "Sorry, not allowed."

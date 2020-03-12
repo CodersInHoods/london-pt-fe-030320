@@ -5,6 +5,7 @@
  * assign your favorite animal
  */
 
+const myFavoriteAnimal = "lamur";
 /**
  * Exercise 2
  *
@@ -13,6 +14,10 @@
  * Check developer tools in your browser for the message
  */
 
+function myAnimalWithLog() {
+    console.log('My favorite animal is ' + myFavoriteAnimal);
+}
+myAnimalWithLog();
 /**
  * Exercise 3
  *
@@ -21,7 +26,10 @@
  * Check developer tools in your browser for the message
  * and see the difference with console.log
  */
-
+function myAnimalWithWarn() {
+    console.warn('My favorite animal is ' + myFavoriteAnimal);
+}
+myAnimalWithWarn();
 /**
  * Exercise 4
  *
@@ -30,6 +38,10 @@
  * Check developer tools in your browser for the message
  * and see the difference with console.log
  */
+function myAnimalWithError() {
+    console.error('My favorite animal is ' + myFavoriteAnimal)
+}
+myAnimalWithError();
 
 /**
  * Exercise 5
@@ -37,3 +49,9 @@
  * alert(read about it) with the message "My favorite cat is YOUR_CITY"
  *
  */
+const myCity = 'London';
+
+function myCity() {
+    window.alert('My favorite cat is ' + );
+}
+myCity();
