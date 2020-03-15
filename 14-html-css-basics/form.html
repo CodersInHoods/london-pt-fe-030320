@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta tags provide instructions for how to render your page in a browser -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon.png">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Coders In Hoods || Lesson 0</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Text / Blocks</a></li>
+            <li><a href="./lists.html">Lists</a></li>
+            <li><a href="./anchors.html">Anchors</a></li>
+            <li><a href="./images.html">Images</a></li>
+            <li><a href="./form.html" class="active">Form</a></li>
+            <li><a href="./css.html">css</a></li>
+        </ul>
+    </nav>
+    <h4>Form</h4>
+    <form action="#">
+        <fieldset>
+            <legend>Pesonal data</legend>
+            <div>
+                <label for="text_input">Text Input</label>
+                <input type="text" placeholder="This is text input" required>
+            </div>
+            <div>
+                <label for="number_input">Number Input</label>
+                <input type="number" id="number_input" placeholder="This is number input" required>
+            </div>
+            <div>
+                <label for="password_input">Password Input</label>
+                <input  type="password" id="password_input" 
+                        placeholder="This is password input" 
+                        required
+                        title="Must contain only numbers and characters"
+                        pattern="[A-Za-z0-9]">
+            </div>
+            <div>
+                <label for="email_input">Email Input</label>
+                <input type="email" id="email_input" placeholder="This is email input" required>
+            </div>
+        </fieldset>
+        <fieldset id="skills">
+            <legend>What skills do you have?</legend>
+            <div>
+                <input type="checkbox" name="skills-html">
+                <label for="skills-html">HTML</label>
+            </div>
+            <div>
+                <input type="checkbox" name="skills-css">
+                <label for="skills-css">CSS</label>
+            </div>
+            <div>
+                <input type="checkbox" name="skills-scss">
+                <label for="skills-scss">SCSS</label>
+            </div>
+            <div>
+                <input type="checkbox" name="skills-js">
+                <label for="skills-js">JS</label>
+            </div>
+            <div>
+                <input type="checkbox" name="skills-react">
+                <label for="skills-react">ReactJS</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>I'm looking for:(you need to use the same attribute "name" for inputs)</legend>
+            <!-- you need to use the same attribute "name" for inputs -->
+            <div>
+                <input type="radio" name="work">
+                <label>Fulltime</label>
+            </div>
+            <div>
+                <input type="radio" name="work">
+                <label>Part time</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Date you can start</legend>
+            <div>
+                <label>Availability</label>
+                <input type="date" name="availability">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Your favorite color</legend>
+            <div>
+                <label>Pick a color</label>
+                <input type="color" name="color">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Upload your CV</legend>
+            <div>
+                <label>CV</label>
+                <input type="file" name="cv_file">
+            </div>
+        </fieldset>
+        <div class="submit_form">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+
+</html>
