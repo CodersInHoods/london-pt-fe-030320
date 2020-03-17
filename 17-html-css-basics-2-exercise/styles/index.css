@@ -4,70 +4,78 @@
 
 body {
     font-size: 14px;
+    font-family: Roboto;
 }
 
-/* Custom styles */
-@keyframes back_glow_pink {
-    0% { transform: translate(10%, 10%) scale(0.8); }
-    50% { transform: translate(-15%, -15%) scale(1.2); }
-    100% { transform: translate(10%, 10%) scale(0.8); }
+.header {
+    background-color: black;
+    height: 500px;
 }
 
-@keyframes back_glow_blue {
-    0% { transform: translate(-10%, -10%) scale(0.8); }
-    50% { transform: translate(15%, 15%) scale(1.2); }
-    100% { transform: translate(-10%, -10%) scale(0.8); }
-}
-
-.content_area {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #000;
-}
-
-.content_area__logo {
-    position: relative;
-    width: 150px;
-    height: 150px;
-}
-
-.content_area__logo img {
-    border-radius: 15px;
-    display: block;
-    left: 0;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    width: 150px;
-    z-index: 3;
-}
-
-
-.content_area__logo:before,
-.content_area__logo:after {
-    border-radius: 15px;
-    content: "";
-    filter: blur(40px);
-    height: 100%;
-    opacity: 0.5;
-    position: absolute;
+.header img {
     width: 100%;
+    height: 100%;
 }
 
-.content_area__logo::after {
-    animation: back_glow_blue 3s ease infinite;
-    background-color: #0ff;
-    z-index: 1;
+.header .titles {
+    position: absolute;
+    color: white;
+    padding-left: 10vw;
+    top: 200px;
 }
 
-.content_area__logo::before {
-    animation: back_glow_pink 3s ease infinite;
-    background-color: #a622ff;
-    z-index: 2;
+nav {
+    display: flex;
+    color: white;
+    justify-content: flex-end;
+    align-items: center;
+    height: 90px;
+    padding: 0 1em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
 }
 
-/* ======================== */
+nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    padding: 0 20px;
+}
+
+nav ul li a:hover {
+    text-underline-offset: 1px;
+}
+
+a:visited {
+    color: white;
+}
+
+.main1 {
+    width: 100vw;
+}
+
+.main1img {
+    width: 50%;
+}
+
+.main1img img {
+    width: 40vw;
+    filter: brightness(20%);
+    padding-left: 40px;
+    padding-top: 20px;
+    z-index: -1;
+}
+
+.htmlcenter h1 {
+    color: white;
+    position: relative;
+    bottom: 50%;
+    left: 40%;
+}
