@@ -31,7 +31,7 @@ nav {
     align-items: center;
     height: 90px;
     padding: 0 1em;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -58,24 +58,133 @@ a:visited {
 }
 
 .main1 {
-    width: 100vw;
+    position: relative;
+    display: flex;
 }
 
 .main1img {
+    position: relative;
     width: 50%;
+    /*! padding: ; */
 }
 
 .main1img img {
-    width: 40vw;
+    height: 100%;
+    width: 100%;
     filter: brightness(20%);
-    padding-left: 40px;
+    padding: 40px;
+}
+
+.htmlcenter {
+    color: white;
+    position: absolute;
+    font-size: 4em;
+    bottom: 30%;
+    left: 25%;
+}
+
+.main1text {
+    width: 400px;
+    left: 60%;
+    top: 30%;
+    position: absolute;
+}
+
+.main1text h1 {
+    font-size: 3em;
+    color: darkorange;
+}
+
+.main1text p {
+    position: absolute;
+    left: 20px;
+    width: 300px;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.container2 {
+    display: flex;
+    position: relative;
+}
+
+.container2 .row2text {
+    width: 50%;
+    position: relative;
+}
+
+.container2 .row2text h1 {
+    color: olive;
+    font-size: 3em;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+}
+
+.container2 .row2text p {
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    width: 50%;
+    font-size: 1.5em
+}
+
+.container2 .row2img {
+    width: 50%;
+    position: relative;
+}
+
+.container2 .row2img img {
+    height: 100%;
+    filter: brightness(20%);
     padding-top: 20px;
     z-index: -1;
 }
 
-.htmlcenter h1 {
+.container2 .row2img h1 {
     color: white;
+    position: absolute;
+    font-size: 6em;
+    bottom: 30%;
+    left: 25%;
+}
+
+.container3 {
     position: relative;
-    bottom: 50%;
-    left: 40%;
+    margin-top: 70px;
+    display: flex;
+    background-color: lightgray;
+}
+
+.container3background {
+    height: 700px;
+    width: 100vw;
+}
+
+.cont3title {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 1.5em;
+}
+
+.container3cards {
+    display: flex;
+    justify-content: center;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 300px;
+    margin: 10px;
+    height: 400px;
+}
+
+.container3cards h1 {
+    text-align: center;
+}
+
+.card1 p {
+    margin: 20px;
 }
