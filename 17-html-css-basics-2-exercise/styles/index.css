@@ -188,3 +188,91 @@ a:visited {
 .card1 p {
     margin: 20px;
 }
+
+.container4 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-left: 50px;
+    height: 600px;
+}
+
+.cont4titles {
+    text-align: center;
+}
+
+.dogimages {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    flex-shrink: 1;
+}
+
+.rightimages {
+    flex-direction: column;
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.doge {
+    position: relative;
+}
+
+.doge img {
+    position: relative;
+    filter: brightness(50%);
+}
+
+.doge h1 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    color: white;
+}
+
+.footer {
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    height: 30vh;
+    margin: 20px;
+    position: relative;
+}
+
+.container4 img {
+    height: 100%;
+}
+
+.social {
+    flex-direction: column;
+    position: absolute;
+    width: 50%;
+    justify-content: center;
+    top: 30%;
+}
+
+.social h2 {
+    margin-left: 50px;
+}
+
+.socialbuttons ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer p {
+    position: absolute;
+    color: white;
+    width: 300px;
+    left: 60%;
+    top: 30%
+}
