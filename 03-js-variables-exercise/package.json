@@ -7,11 +7,18 @@
     "concat": "concat -o ./tests/index.test.js ./index.js ./tests/tests.js ",
     "test": "npm run concat && jest"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "pre-push": "npm install && npm run test"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^24.9.0",
-    "concat": "^1.0.3"
+    "concat": "^1.0.3",
+    "husky": "^4.2.3",
+    "jest": "^24.9.0"
   }
 }

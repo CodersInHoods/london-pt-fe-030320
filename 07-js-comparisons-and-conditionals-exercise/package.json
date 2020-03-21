@@ -1,5 +1,5 @@
 {
-  "name": "js-comparisons-and-conditionals-exercise",
+  "name": "test-exercise",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run test",
-      "pre-push": "npm run test"
+      "pre-push": "npm install && npm run test"
     }
   },
   "keywords": [],
