@@ -2,9 +2,10 @@
   "name": "test-exercise",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:dev": "npm run test -- --watch"
+    "concat": "concat -o ./tests/index.test.js ./index.js ./tests/tests.js ",
+    "test": "npm run concat && jest"
   },
   "husky": {
     "hooks": {
@@ -17,9 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "concat": "^1.0.3",
-    "fs": "0.0.1-security",
     "husky": "^4.2.3",
-    "jest": "^24.9.0",
-    "path": "^0.12.7"
+    "jest": "^24.9.0"
   }
 }
