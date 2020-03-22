@@ -1,8 +1,2 @@
-.DS_Store
+git .DS_Store
 node_modules
-<<<<<<< HEAD
-HTML_Play/index.html
-=======
-index.test.js
->>>>>>> fbd342a151624f922a49b9ddb09b292138cd5cb9
-18-creating-arrays-exercise/index.js
