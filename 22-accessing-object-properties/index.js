@@ -1,22 +1,22 @@
 // **** DO NOT MODIFY THIS OBJECT ****
 // ============================
 const user = {
-	type: "admin",
-	firstName: "Alex",
-	lastName: "Smith",
-	password: "12345",
-	age: 26,
-	favoriteMovies: ["Interstellar", "The Wolf of Wall Street"],
-	parents: {
-		mother: {
-			firstName: "Julia",
-			lastName: "Smith"
-		},
-		father: {
-			firstName: "John",
-			lastName: "Smith"
-		}
-	}
+    type: "admin",
+    firstName: "Alex",
+    lastName: "Smith",
+    password: "12345",
+    age: 26,
+    favoriteMovies: ["Interstellar", "The Wolf of Wall Street"],
+    parents: {
+        mother: {
+            firstName: "Julia",
+            lastName: "Smith"
+        },
+        father: {
+            firstName: "John",
+            lastName: "Smith"
+        }
+    }
 };
 // ============================
 
@@ -28,7 +28,8 @@ const user = {
  *
  * PS: use console.log() to see the result
  */
-
+const userFirstName = user.firstName;
+console.log(userFirstName);
 /**
  * Exercise 2
  *
@@ -38,7 +39,8 @@ const user = {
  *
  * PS: use console.log() to see the result
  */
-
+const favoriteMovie = user.favoriteMovies[0];
+console.log(favoriteMovie);
 /**
  * Exercise 3
  * create "userFullName" that equals to
@@ -47,7 +49,8 @@ const user = {
  *
  * PS: use console.log() to see the result
  */
-
+const userFullName = `${user.firstName} ${user.lastName}`;
+console.log(userFullName);
 /**
  * Exercise 4
  *
@@ -56,6 +59,13 @@ const user = {
  *
  * PS: use console.log() to see the result
  */
+function getFullName() {
+    const userFullName = `${user.firstName} ${user.lastName}`;
+    console.log(userFullName);
+    return userFullName;
+
+}
+getFullName();
 
 /**
  * Exercise 5
@@ -65,6 +75,8 @@ const user = {
  *
  * PS: use console.log() to see the result
  */
+const mothersFirstName = user.parents.mother.firstName;
+
 
 /**
  * Exercise 6
@@ -75,7 +87,12 @@ const user = {
  *
  * PS: use console.log() to see the result
  */
-
+function getParentFullName(type) {
+    const fullNameParent = user.parents[type].firstName + ` ` + user.parents[type].lastName;
+    console.log(fullNameParent);
+    return fullNameParent;
+}
+getParentFullName("father");
 /**
  * Exercise 7
  *
@@ -84,3 +101,11 @@ const user = {
  *
  * * PS: use console.log() to see the result
  */
+function getUserData(param) {
+    result = user[param];
+    console.log(result)
+    return result
+}
+
+
+getUserData("age");
