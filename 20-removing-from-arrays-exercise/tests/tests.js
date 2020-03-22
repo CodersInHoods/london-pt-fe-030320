@@ -1,5 +1,3 @@
-// splice
-
 test("carBrands is declared", () => {
 	expect(Array.isArray(carBrands)).toBe(true);
 });
