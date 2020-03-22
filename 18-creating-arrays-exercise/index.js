@@ -34,7 +34,7 @@
  * Exercise 5
  *
  * create a pandaIndex variable and by using "indexOf" JS method
- * find dog index in "animals" array
+ * find panda index in "animals" array
  */
 
 
