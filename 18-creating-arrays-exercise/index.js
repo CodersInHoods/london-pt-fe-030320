@@ -6,17 +6,13 @@
  */
 
 
-const wildAnimals = ["tiger", "rabbit", "panda", "giraffe"];
-console.log(wildAnimals);
-
 /**
  * Exercise 2
  *
  * Create a variable "pets" and and 'cat', 'dog' and 'hamster'
  * into it as strings(must contains dog)
  */
-const pets = ["cat", "dog", "hamster"]
-console.log(pets)
+
 
 /**
  * Exercise 3
@@ -24,7 +20,7 @@ console.log(pets)
  * Create a variable "animals". It should include all wildAnimals
  * and all pets. Find the way to concatenate your arrays with JS
  */
-animals = '$[pets] $[wildAnimals]';
+
 
 /**
  * Exercise 4
@@ -95,3 +91,4 @@ animals = '$[pets] $[wildAnimals]';
  * Create variable "moreThanSevenIndex" returns first number
  * "numbers" that are more than 7
  */
+
