@@ -30,7 +30,7 @@
 /**
  * Exercise 4
  *
- * in "carBrands" replace Citroen with Rolls-Royce
+ * in "carBrands" replace BMW with Rolls-Royce
  *
  * * PS: console.log() the result to see the difference
  */
