@@ -81,13 +81,14 @@ function addIndex() {
 
     for (i = 0; i < numbersForIndexes.length; i++) {
         addNew = i + numbersForIndexes[i];
-        newArray.push(addNew);
+        number.push(addNew);
     }
     console.log(newArray);
     return newArray;
 
 }
 addIndex();
+
 
 
 const forLowestNumber = [5, 234, 96, 34, -34, 0, 23]; // DON'T TOUCH THIS LINE :)
