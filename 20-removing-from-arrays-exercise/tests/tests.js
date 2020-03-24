@@ -1,5 +1,3 @@
-// splice
-
 test("carBrands is declared", () => {
 	expect(Array.isArray(carBrands)).toBe(true);
 });
@@ -21,8 +19,8 @@ describe("Remove elements from carBrands", () => {
 	});
 
 	// Exercise 4
-	test("Citroen should be removed from carBrands", () => {
-		expect(carBrands.includes("Citroen")).toBe(false);
+	test("BMW should be removed from carBrands", () => {
+		expect(carBrands.includes("BMW")).toBe(false);
 	});
 
 	test("carBrands should include Rolls-Royce", () => {

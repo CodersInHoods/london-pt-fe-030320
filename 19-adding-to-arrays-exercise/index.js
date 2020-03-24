@@ -34,7 +34,7 @@
  */
 
 /**
- * create an array "wildAnimals" with "giraffe" and "elephant"
+ * create an array "moreWildAnimals" with "giraffe" and "elephant"
  */
 
 /**

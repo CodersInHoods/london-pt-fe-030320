@@ -23,7 +23,7 @@ describe("logProperties", () => {
 		for (let i = 0; i < Object.keys(obj).length; i++) {
 			expect(global.console.log).toHaveBeenNthCalledWith(
 				i + 1,
-				Object.keys(obj)[i]
+				`Property name: ${Object.keys(obj)[i]}`
 			);
 		}
 	});
