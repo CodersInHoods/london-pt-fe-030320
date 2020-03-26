@@ -54,16 +54,15 @@ function rulerConstructor() {
     ruler.push(0);
     while (ruler[i] < 100) {
         i++;
-        console.log(i);
         counter = counter + 10;
         ruler.push(counter);
-        console.log(ruler[i])
     }
+    console.log(ruler);
 
-    return ruler;
 }
-ruler = rulerConstructor();
-console.log(ruler);
+rulerConstructor();
+
+
 // ==========================
 
 /**
