@@ -110,7 +110,5 @@ function lowestNumber() {
     }
     return smallest;
 }
-console.log(smallest);
-
 lowestNumber();
 console.log(smallest);
