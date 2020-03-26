@@ -42,13 +42,14 @@ console.log(newArray);
  * and returns all values as one string with space separation.
  */
 function getAllValuesAsString(object) {
-    funcstring = "";
+    const funcstring = [];
     for (values in object) {
-        funcstring += " " + object[values];
+        funcstring.push(object[values]);
         console.log(funcstring);
-
     }
-    return funcstring;
+    joingedfunc = funcstring.join(" ");
+    console.log(joingedfunc);
+    return joingedfunc;
 }
 stringFromObject = (getAllValuesAsString(obj));
 console.log(stringFromObject);
