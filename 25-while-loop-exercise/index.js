@@ -62,7 +62,7 @@ function rulerConstructor() {
 
     return ruler;
 }
-rulerConstructor();
+ruler = rulerConstructor();
 console.log(ruler);
 // ==========================
 
