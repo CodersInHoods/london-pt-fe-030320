@@ -75,19 +75,20 @@ const numbersForIndexes = [6, 2, 16, 23, 84, 21, 9, 3]; // DON'T TOUCH THIS LINE
  * Create a function {addIndex} that takes {numbersForIndexes} array,
  * and returns a new array which includes each number + it's index
  */
-let newArray = [];
+
 
 function addIndex() {
-
+    const number = [];
     for (i = 0; i < numbersForIndexes.length; i++) {
-        addNew = i + numbersForIndexes[i];
+        let addNew = numbersForIndexes[i] + i;
         number.push(addNew);
     }
-    console.log(newArray);
-    return newArray;
+    console.log(number);
+    return number;
 
 }
-addIndex();
+addIndex(numbersForIndexes);
+
 
 
 
