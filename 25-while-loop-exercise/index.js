@@ -49,8 +49,9 @@ let ruler = [];
  * will be [0,10,20,30,40,50,60,70,80,90,100]
  */
 function rulerConstructor() {
-    i = 0;
-    counter = 0;
+    const i = 0;
+    const counter = 0;
+
     ruler.push(0);
     while (ruler[i] < 100) {
         i++;
@@ -59,7 +60,15 @@ function rulerConstructor() {
     }
     console.log(ruler);
 }
-rulerConstructor();
+
+
+//    ruler[0] = 0;
+//
+//   while (ruler[ruler.length - 1] < 100) {
+//        const newValue = ruler[ruler.length - 1] + 10;
+//        ruler.push(newValue);
+//    }
+// }
 // ==========================
 
 /**
@@ -69,10 +78,11 @@ rulerConstructor();
  * "Neighbour" to the array until you have at least 5 guests.
  * Without using an if statement!
  */
+
 function partyPadding(nameArray) {
     while (nameArray.length < 5) {
         nameArray.push("Neighbour");
     }
     console.log(nameArray);
 }
-partyPadding(["ben", "sammy", "elton"]);
+partyPadding(["nina", "allen", "sam"]);
