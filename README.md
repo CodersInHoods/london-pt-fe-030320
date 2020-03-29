@@ -22,3 +22,9 @@ git add --all
 git commit -m "YOUR COMMIT MESSAGE"
 git push
 ```
+
+## Project repos
+
+Remember: create your own fork!
+
+[JS CLI](https://github.com/CodersInHoods/js-cli-project-london-pt-fe-030320)
