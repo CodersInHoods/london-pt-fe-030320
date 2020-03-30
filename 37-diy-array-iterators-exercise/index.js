@@ -9,12 +9,6 @@
  *
  */
 
-const forEach = (array, callback) => {
-  for (const el of array) {
-    callback(el, array.indexOf(el));
-  }
-};
-
 /**
  * Exercise #2
  *
@@ -28,14 +22,6 @@ const forEach = (array, callback) => {
  * time the callback was invoked.
  *
  */
-
-const map = (array, callback) => {
-  const newArr = [];
-  for (const el of array) {
-    newArr.push(callback(el, array.indexOf(el)));
-  }
-  return newArr;
-};
 
 /**
  * Exercise #3
@@ -51,16 +37,6 @@ const map = (array, callback) => {
  *
  */
 
-const filter = (array, callback) => {
-  const newArr = [];
-  for (const el of array) {
-    if (callback(el, array.indexOf(el))) {
-      newArr.push(el);
-    }
-  }
-  return newArr;
-};
-
 /**
  * Exercise #4
  *
@@ -74,17 +50,6 @@ const filter = (array, callback) => {
  * truthy value.
  *
  */
-
-const find = (array, callback) => {
-  let match;
-  for (const el of array) {
-    if (callback(el, array.indexOf(el))) {
-      match = el;
-      break;
-    }
-  }
-  return match;
-};
 
 /**
  * Exercise #5
@@ -100,16 +65,6 @@ const find = (array, callback) => {
  *
  */
 
-const findIndex = (array, callback) => {
-  let index;
-  for (const el of array) {
-    if (callback(el, array.indexOf(el))) {
-      index = array.indexOf(el);
-      break;
-    }
-  }
-  return index;
-};
 /**
  * Exercise #6
  *
@@ -125,17 +80,6 @@ const findIndex = (array, callback) => {
  *
  */
 
-const every = (array, callback) => {
-  let all = true;
-  for (const el of array) {
-    if (!callback(el, array.indexOf(el))) {
-      all = false;
-      break;
-    }
-  }
-  return all;
-};
-
 /**
  * Exercise #7
  *
@@ -150,17 +94,6 @@ const every = (array, callback) => {
  * a truthy value.
  *
  */
-
-const some = (array, callback) => {
-  let any = false;
-  for (const el of array) {
-    if (callback(el, array.indexOf(el))) {
-      any = true;
-      break;
-    }
-  }
-  return any;
-};
 
 /**
  * Exercise #8
@@ -183,13 +116,3 @@ const some = (array, callback) => {
  * value.
  *
  */
-
-const reduce = (array, callback, initialValue = 0) => {
-  let acca = initialValue;
-
-  for (const el of array) {
-    acca = callback(acca, el, array.indexOf(el));
-  }
-
-  return acca;
-};
