@@ -1,39 +1,46 @@
 // install and  import "readline-sync" npm package before you do exercises
+readlineSync = require('readline-sync');
 
 let selectedItems = {
-	book: "",
-	movie: "",
-	nextTrip: ""
+    book: "",
+    movie: "",
+    nextTrip: ""
 };
 
 const movies = [
-	"The Invisible Man",
-	"Never Rarely Sometimes Always",
-	"Gretel & Hansel",
-	"No time to die",
-	"Bloodshot",
-	"Onward",
-	"Sonic"
+    "The Invisible Man",
+    "Never Rarely Sometimes Always",
+    "Gretel & Hansel",
+    "No time to die",
+    "Bloodshot",
+    "Onward",
+    "Sonic"
 ];
 
 const books = [
-	"My Dark Vanessa",
-	"Uncanny Valley",
-	"Weather",
-	"The night watchman",
-	"All adults here",
-	"Dear Edward",
-	"Grown ups"
+    "My Dark Vanessa",
+    "Uncanny Valley",
+    "Weather",
+    "The night watchman",
+    "All adults here",
+    "Dear Edward",
+    "Grown ups"
 ];
 
 const countries = [
-	"Italy",
-	"France",
-	"Germany",
-	"Spain",
-	"Portugal",
-	"Denmark",
-	"Netherland"
+    "Italy",
+    "France",
+    "Germany",
+    "Spain",
+    "Portugal",
+    "Denmark",
+    "Netherland"
+];
+
+const mainMenu = [
+    `books`,
+    `movies`,
+    `Next destination`,
 ];
 
 /**
@@ -45,6 +52,11 @@ const countries = [
  *
  * NOTE: You need to add option to go back, to main menu
  */
+user = {};
+
+index = readlineSync.keyInSelect(books, "which book?");
+user.book = books[index];
+console.log(user);
 
 /**
  * Exercise 2
@@ -56,6 +68,10 @@ const countries = [
  * NOTE: You need to add option to "go back", to main menu
  */
 
+index = readlineSync.keyInSelect(movies, "which movie?");
+user.movie = movies[index];
+console.log(user);
+
 /**
  * Exercise 3
  *
@@ -66,6 +82,9 @@ const countries = [
  * NOTE: You need to add option to go back, to main menu
  */
 
+index = readlineSync.keyInSelect(countries, "which countries?");
+user.country = countries[index];
+console.log(user);
 /**
  * Exercise 4
  *
