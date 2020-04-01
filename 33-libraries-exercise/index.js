@@ -46,8 +46,14 @@ inversedColourText('oh wei wei');
  * and style each by adding red background colour and setting
  * font colour to white.
  */
+newArray = [];
 
-const styledText = array =>
-    array.forEach(element => log(chalk.bgRed.white(element)));
+const styledText = array => {
+    array.map(element => {
+        element = chalk.bgRed.white(element);
+        console.log(element);
+        return element;
+    });
+};
 
-styledText([`one`, `two`, `theww`]);
+styledText([`one`, `two`, `threw`]);

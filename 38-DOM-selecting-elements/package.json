@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "concat": "concat -o ./tests/index.test.js ./index.js ./tests/tests.js ",
+    "concat": "concat -o ./tests/index.test.js ./tests/DOM.js ./index.js ./tests/tests.js ",
     "test": "npm run concat && jest"
   },
   "husky": {
@@ -19,6 +19,6 @@
   "devDependencies": {
     "concat": "^1.0.3",
     "husky": "^4.2.3",
-    "jest": "^25.2.4"
+    "jest": "^25.1.0"
   }
 }

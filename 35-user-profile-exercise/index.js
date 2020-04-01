@@ -23,14 +23,14 @@ console.log(`Hello ${user.firstName} ${user.lastName}!`);
  *
  * ask user for a age and save response to {user.age}
  */
-user.age = readlineSync.question('age please?');
+user.age = readlineSync.questionInt('age please?');
 
 /*
  * Exercise 4
  *
  * ask user for a email and save response to {user.email}
  */
-user.email = readlineSync.question('email please?');
+user.email = readlineSync.questionEMail('email please?');
 
 /**
  * OPTIONAL:
