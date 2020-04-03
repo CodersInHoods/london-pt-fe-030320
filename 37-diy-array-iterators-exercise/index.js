@@ -9,6 +9,17 @@
  *
  */
 
+
+function forEach(array, callback) {
+    for (var i = 0; i < array.length; i++) {
+        const element = array[i];
+        callback(element, i);
+    }
+}
+
+
+
+
 /**
  * Exercise #2
  *
@@ -22,6 +33,16 @@
  * time the callback was invoked.
  *
  */
+function map(array, callback) {
+    const newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        result = callback(element, i);
+        newArray.push(result);
+    }
+    return newArray;
+}
+
 
 /**
  * Exercise #3
@@ -36,6 +57,17 @@
  * callback returned a truthy value.
  *
  */
+function filter(array, callback) {
+    const newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        result = callback(element, i);
+        if (result) {
+            newArray.push(element);
+        }
+    }
+    return newArray;
+}
 
 /**
  * Exercise #4
@@ -50,7 +82,17 @@
  * truthy value.
  *
  */
-
+function find(array, callback) {
+    const newArray = [];
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        result = callback(element, i);
+        if (result) {
+            return element;
+        }
+    }
+    return newArray;
+}
 /**
  * Exercise #5
  *
@@ -64,7 +106,15 @@
  * callback returns a truthy value.
  *
  */
-
+function findIndex(array, callback) {
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        result = callback(element, i);
+        if (result) {
+            return i;
+        }
+    }
+}
 /**
  * Exercise #6
  *
@@ -80,6 +130,19 @@
  *
  */
 
+function every(array, callback) {
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        const result = callback(element, i);
+        if (!result) {
+            return false
+        }
+    }
+    return true;
+}
+
+
+
 /**
  * Exercise #7
  *
@@ -94,7 +157,16 @@
  * a truthy value.
  *
  */
-
+function some(array, callback) {
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        const result = callback(element, i);
+        if (result) {
+            return true
+        }
+    }
+    return false;
+}
 /**
  * Exercise #8
  *
@@ -116,3 +188,15 @@
  * value.
  *
  */
+
+
+function reduce(array, callback, initialValue) {
+    let cumValue = initialValue === undefined ? 0 : initialValue;
+    for (let i = 0; i < array.length; i++) {
+        let element = array[i];
+        initialValue = cumValue;
+        cumValue = callback(cumValue, element, i);
+
+    }
+    return cumValue;
+}
