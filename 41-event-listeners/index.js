@@ -87,11 +87,9 @@ function clickElsewhere() {
  */
 
 function pressAKey() {
-    input.addEventListener("focus", (event) => {
-        targetEl = event.target;
-        document.addEventListener("keydown", (eve) => {
+    input.addEventListener("focus", () => {
+        input.addEventListener("keydown", (eve) => {
             console.log("key pressed: " + eve.key)
-
         })
     })
 }
@@ -104,9 +102,8 @@ function pressAKey() {
  * and then press any key and release it
  */
 function releaseAKey() {
-    input.addEventListener("focus", (event) => {
-        targetEl = event.target;
-        document.addEventListener("keyup", (eve) => {
+    input.addEventListener("focus", () => {
+        input.addEventListener("keyup", (eve) => {
             console.log("key pressed: " + eve.key)
 
         })
@@ -120,6 +117,18 @@ function releaseAKey() {
  * to uppercase when you focus on input which is inside 'div' with class 'input'
  * and then press any key and release it
  */
+function inputToUpperCase() {
+    input.addEventListener("focus", (event) => {
+        input.addEventListener("keydown", () => {
+            input.addEventListener("keyup", (eve) => {
+                text = eve.target;
+                text.value = text.value.toUpperCase();
+
+            })
+
+        })
+    })
+}
 
 /**
  * Exercise 9
