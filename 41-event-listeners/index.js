@@ -9,13 +9,27 @@
  * logs a message in the console when a click occurs
  */
 
+const button = document.querySelector("div.click > button");
+
+function clickTheButton() {
+    button.addEventListener("click", () => {
+        console.log("click happened")
+    })
+}
+
 /**
  * Exercise 2
  *
  * create a function {hoverOver} which listens for a hover over an
  * "a" tag inside div with class "mouseover" and logs a message in the console
  */
+const a = document.querySelector("div.mouseover > a");
 
+function hoverOver() {
+    a.addEventListener("mouseover", () => {
+        console.log("a message for the masses");
+    })
+}
 /**
  * Exercise 3
  *
@@ -23,6 +37,11 @@
  * cursor leaves the "a" tag inside div with class "mouseover"
  * and log a message in the console
  */
+function handleLeave() {
+    a.addEventListener("mouseleave", () => {
+        console.log("a message for the leaving mouses");
+    })
+}
 
 /**
  * Exercise 4
@@ -31,6 +50,13 @@
  * when you focus on input which is inside 'div' with class 'input'
  */
 
+const input = document.querySelector("div.input > input");
+
+function focusOnMe() {
+    input.addEventListener("focus", () => {
+        console.log("i am just a humble focus message")
+    })
+}
 /**
  * Exercise 5
  *
@@ -38,6 +64,19 @@
  * when first you focus on input which is inside 'div' with class 'input'
  * and then click on anything else
  */
+
+
+function clickElsewhere() {
+    input.addEventListener("focus", (event) => {
+        targetEl = event.target;
+        document.addEventListener("click", (eve) => {
+            console.log("clicked")
+            if (targetEl !== eve.target) {
+                console.log("somewhere else")
+            }
+        })
+    })
+}
 
 /**
  * Exercise 6
@@ -47,6 +86,16 @@
  * and then press any key
  */
 
+function pressAKey() {
+    input.addEventListener("focus", (event) => {
+        targetEl = event.target;
+        document.addEventListener("keydown", (eve) => {
+            console.log("key pressed: " + eve.key)
+
+        })
+    })
+}
+
 /**
  * Exercise 7
  *
@@ -54,6 +103,15 @@
  * when you focus on input which is inside 'div' with class 'input'
  * and then press any key and release it
  */
+function releaseAKey() {
+    input.addEventListener("focus", (event) => {
+        targetEl = event.target;
+        document.addEventListener("keyup", (eve) => {
+            console.log("key pressed: " + eve.key)
+
+        })
+    })
+}
 
 /**
  * Exercise 8
