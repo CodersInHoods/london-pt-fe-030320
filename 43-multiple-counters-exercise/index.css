@@ -1,0 +1,136 @@
+* {
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+}
+
+body {
+	font-size: 14px;
+}
+
+h1 {
+	text-align: center;
+}
+
+#new_timer {
+	display: block;
+	margin: 0 auto;
+	border: none;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+	background-color: #268bff;
+	color: #fff;
+	border-radius: 4px;
+	width: 150px;
+	line-height: 2em;
+	font-size: 1.125em;
+	text-transform: uppercase;
+	outline: none;
+	font-weight: bold;
+	letter-spacing: 1px;
+	transition: .2s;
+	cursor: pointer;
+}
+
+#new_timer:hover {
+	background-color: #1764bd;
+}
+
+.timers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.timer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 230px;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+	padding: 3em 1em;
+	margin: 1em;
+	transition: 0.2s;
+}
+
+.timer:hover {
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.remove {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+}
+.remove:hover:before,
+.remove:hover:after {
+	background-color: #fd3131;
+}
+
+.remove:before,
+.remove:after {
+	position: absolute;
+	left: 15px;
+	content: " ";
+	height: 15px;
+	width: 2px;
+	background-color: #474747;
+	transition: 0.2s;
+}
+.remove:before {
+	transform: rotate(45deg);
+}
+.remove:after {
+	transform: rotate(-45deg);
+}
+
+.timer h3 {
+	width: 100%;
+	text-align: center;
+	font-size: 4.5em;
+	color: #046be0;
+	margin: 0.6em;
+}
+
+.timer h3 span {
+	font-size: 0.5em;
+	color: #fd3131;
+}
+
+.btn {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.btn button {
+	width: 60px;
+	line-height: 2.5em;
+	margin: 0.5em 1em;
+	border: none;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition: 0.2s;
+	cursor: pointer;
+	background-color: #268bff;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-radius: 4px;
+	outline: none;
+}
+
+.btn button:hover {
+	background-color: #1764bd;
+}
+
+.btn .reset {
+	background-color: #fd3131;
+}
+
+.btn .reset:hover {
+	background-color: #c32424;
+}
