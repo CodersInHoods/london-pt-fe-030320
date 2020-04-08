@@ -1,5 +1,7 @@
 # Emergency Ration Budget App
 
+![demo gif](./example.gif)
+
 ## Deliverables
 
 1. Render products into `#products`
