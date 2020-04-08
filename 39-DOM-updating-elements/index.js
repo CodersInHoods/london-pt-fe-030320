@@ -46,10 +46,11 @@ const prependToTitle = string => h1.innerText = string + h1.innerText;
  */
 const div = document.querySelector("div");
 
-function setInnerHTMLForDiv(tagName, text) {
-    const element = document.createElement(tagName);
-    element.innerText = text;
-    div.appendChild(element);
+function setInnerHTMLForDiv(tagName, inText) {
+    const newTag = document.createElement(tagName);
+    newTag.innerText = inText;
+    div.appendChild(newTag);
+    return tagName;
 }
 
 
@@ -135,7 +136,7 @@ const disableBtns = clsname => {
 
 function addClassToLi() {
     const listOfClasses = document.querySelectorAll("ul.list > li");
-    let i = 1;
+    let i = 0;
     for (let item of listOfClasses) {
         item.className = `list_item_${i}`;
         i++;
@@ -161,7 +162,7 @@ function removeListItemClass() {
  * the id to the element
  */
 
-function addID(ident, selector) {
+function addId(ident, selector) {
     const selected = document.querySelector(selector);
     selected.id = ident;
 }

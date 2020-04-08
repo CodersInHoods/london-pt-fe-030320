@@ -71,7 +71,7 @@ function hoverOver() {
  * and log a message in the console
  */
 function handleLeave() {
-    a.addEventListener("mouseleave", () => {
+    a.addEventListener("mouseout", () => {
         console.log("a message for the leaving mouses");
     })
 }
@@ -99,11 +99,10 @@ function focusOnMe() {
  */
 
 
-function clickElsewhere() {
+function clickSomewhereElse() {
     input.addEventListener("focus", (event) => {
         targetEl = event.target;
         document.addEventListener("click", (eve) => {
-            console.log("clicked")
             if (targetEl !== eve.target) {
                 console.log("somewhere else")
             }
@@ -111,6 +110,14 @@ function clickElsewhere() {
     })
 }
 
+function clickElsewhere() {
+    input.addEventListener("focus", (event) => {
+        input.addEventListener("blur", () => {
+            console.log("somewhere else")
+
+        })
+    })
+}
 /**
  * Exercise 6
  *
@@ -121,7 +128,7 @@ function clickElsewhere() {
 
 function pressAKey() {
     input.addEventListener("focus", () => {
-        input.addEventListener("keydown", (eve) => {
+        input.addEventListener("keyDown", (eve) => {
             console.log("key pressed: " + eve.key)
         })
     })
@@ -136,7 +143,7 @@ function pressAKey() {
  */
 function releaseAKey() {
     input.addEventListener("focus", () => {
-        input.addEventListener("keyup", (eve) => {
+        input.addEventListener("keyUp", (eve) => {
             console.log("key pressed: " + eve.key)
 
         })
@@ -152,8 +159,8 @@ function releaseAKey() {
  */
 function inputToUpperCase() {
     input.addEventListener("focus", (event) => {
-        input.addEventListener("keydown", () => {
-            input.addEventListener("keyup", (eve) => {
+        input.addEventListener("keyDown", () => {
+            input.addEventListener("keyUp", (eve) => {
                 text = eve.target;
                 text.value = text.value.toUpperCase();
 
@@ -169,6 +176,13 @@ function inputToUpperCase() {
  * create a function {handleSelectChange} which will log selected option value
  * in console when you select an option in "select" with id "items"
  */
+items = document.querySelector("#items");
+
+function handleSelectChange() {
+    items.addEventListener("change", () => {
+        console.log(items.value)
+    })
+}
 
 /**
  * Exercise 10
@@ -177,238 +191,256 @@ function inputToUpperCase() {
  * on submit, build an object where property names will be input names,
  * and values, input values and log it in the console
  */
+const formInput = document.querySelectorAll("form > input")
+const form = document.querySelector("form");
 
+function submitFormHandler() {
+    form.addEventListener("submit", () => {
+        event.preventDefault();
+        const object = {};
+        for (key of formInput) {
+            object[key.name] = key.value;
+        }
+        console.log(object);
+    })
+}
 /**
  * Exercise 11
  *
  * create a function {handleScroll} which will get window vertical scroll position
  * on scroll, and log it in the console
  */
+
+const handleScroll = () => {
+    document.addEventListener("scroll", () => {
+        console.log(window.scrollY);
+    })
+}
 const {
-	fireEvent
+    fireEvent
 } = require("@testing-library/dom/dist/@testing-library/dom.umd.js");
 
-globalThis.console = {
-	log: jest.fn()
+global.console = {
+    log: jest.fn()
 };
 
 // Exercise 1
 describe("clickTheButton", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("clickTheButton should be a function", () => {
-		expect(typeof clickTheButton).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("clickTheButton should be a function", () => {
+        expect(typeof clickTheButton).toEqual("function");
+    });
 
-	test("should log a message on button click", () => {
-		const btn = document.querySelector(".click button");
+    test("should log a message on button click", () => {
+        const btn = document.querySelector(".click button");
 
-		expect(global.console.log).not.toHaveBeenCalled();
-		clickTheButton();
-		btn.click();
+        expect(global.console.log).not.toHaveBeenCalled();
+        clickTheButton();
+        btn.click();
 
-		expect(global.console.log).toHaveBeenCalledTimes(1);
-	});
+        expect(global.console.log).toHaveBeenCalledTimes(1);
+    });
 });
 
 // Exercise 2
 describe("hoverOver", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("hoverOver should be a function", () => {
-		expect(typeof hoverOver).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("hoverOver should be a function", () => {
+        expect(typeof hoverOver).toEqual("function");
+    });
 
-	test("should log a message when hover over 'a' element", () => {
-		const a = document.querySelector(".mouseover a");
-		expect(global.console.log).not.toHaveBeenCalled();
-		hoverOver();
-		fireEvent.mouseOver(a);
+    test("should log a message when hover over 'a' element", () => {
+        const a = document.querySelector(".mouseover a");
+        expect(global.console.log).not.toHaveBeenCalled();
+        hoverOver();
+        fireEvent.mouseOver(a);
 
-		expect(global.console.log).toHaveBeenCalledTimes(1);
-	});
+        expect(global.console.log).toHaveBeenCalledTimes(1);
+    });
 });
 
 // Exercise 3
 describe("handleLeave", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("handleLeave should be a function", () => {
-		expect(typeof handleLeave).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("handleLeave should be a function", () => {
+        expect(typeof handleLeave).toEqual("function");
+    });
 
-	test("should log a message when cursor leaves 'a' element", () => {
-		const a = document.querySelector(".mouseover a");
-		expect(global.console.log).not.toHaveBeenCalled();
-		handleLeave();
-		fireEvent.mouseOut(a);
+    test("should log a message when cursor leaves 'a' element", () => {
+        const a = document.querySelector(".mouseover a");
+        expect(global.console.log).not.toHaveBeenCalled();
+        handleLeave();
+        fireEvent.mouseOut(a);
 
-		expect(global.console.log).toHaveBeenCalledTimes(1);
-	});
+        expect(global.console.log).toHaveBeenCalledTimes(1);
+    });
 });
 
 // Exercise 4
 describe("focusOnMe", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("focusOnMe should be a function", () => {
-		expect(typeof focusOnMe).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("focusOnMe should be a function", () => {
+        expect(typeof focusOnMe).toEqual("function");
+    });
 
-	test("should log a message when user focus on input", () => {
-		const input = document.querySelector(".input input");
-		expect(global.console.log).not.toHaveBeenCalled();
-		focusOnMe();
-		fireEvent.focus(input);
+    test("should log a message when user focus on input", () => {
+        const input = document.querySelector(".input input");
+        expect(global.console.log).not.toHaveBeenCalled();
+        focusOnMe();
+        fireEvent.focus(input);
 
-		expect(global.console.log).toHaveBeenCalledTimes(1);
-	});
+        expect(global.console.log).toHaveBeenCalledTimes(1);
+    });
 });
 
 // Exercise 5
 describe("clickElsewhere", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("clickElsewhere should be a function", () => {
-		expect(typeof clickElsewhere).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("clickElsewhere should be a function", () => {
+        expect(typeof clickElsewhere).toEqual("function");
+    });
 
-	test("should log a message when user click elsewhere", () => {
-		const input = document.querySelector(".input input");
-		expect(global.console.log).not.toHaveBeenCalled();
-		clickElsewhere();
-		fireEvent.blur(input);
+    test("should log a message when user click elsewhere", () => {
+        const input = document.querySelector(".input input");
+        expect(global.console.log).not.toHaveBeenCalled();
+        clickElsewhere();
+        fireEvent.blur(input);
 
-		expect(global.console.log).toHaveBeenCalledTimes(1);
-	});
+        expect(global.console.log).toHaveBeenCalledTimes(1);
+    });
 });
 
 // Exercise 6
 describe("pressAKey", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("pressAKey should be a function", () => {
-		expect(typeof pressAKey).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("pressAKey should be a function", () => {
+        expect(typeof pressAKey).toEqual("function");
+    });
 
-	test("should log a message when press a key", () => {
-		const input = document.querySelector(".input input");
-		expect(global.console.log).not.toHaveBeenCalled();
-		pressAKey();
-		fireEvent.keyDown(input);
+    test("should log a message when press a key", () => {
+        const input = document.querySelector(".input input");
+        expect(global.console.log).not.toHaveBeenCalled();
+        pressAKey();
+        fireEvent.keyDown(input);
 
-		expect(global.console.log).toHaveBeenCalledTimes(1);
-	});
+        expect(global.console.log).toHaveBeenCalledTimes(1);
+    });
 });
 
 // Exercise 7
 describe("releaseAKey", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("releaseAKey should be a function", () => {
-		expect(typeof pressAKey).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("releaseAKey should be a function", () => {
+        expect(typeof pressAKey).toEqual("function");
+    });
 
-	test("should log a message when release a key", () => {
-		const input = document.querySelector(".input input");
-		expect(global.console.log).not.toHaveBeenCalled();
-		releaseAKey();
-		fireEvent.keyUp(input);
+    test("should log a message when release a key", () => {
+        const input = document.querySelector(".input input");
+        expect(global.console.log).not.toHaveBeenCalled();
+        releaseAKey();
+        fireEvent.keyUp(input);
 
-		expect(global.console.log).toHaveBeenCalledTimes(1);
-	});
+        expect(global.console.log).toHaveBeenCalledTimes(1);
+    });
 });
 
 // Exercise 8
 describe("inputToUpperCase", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("inputToUpperCase should be a function", () => {
-		expect(typeof inputToUpperCase).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("inputToUpperCase should be a function", () => {
+        expect(typeof inputToUpperCase).toEqual("function");
+    });
 
-	test("should convert input value to uppercase", () => {
-		const input = document.querySelector(".input input");
-		input.value = "random text";
-		inputToUpperCase();
-		fireEvent.keyUp(input);
+    test("should convert input value to uppercase", () => {
+        const input = document.querySelector(".input input");
+        input.value = "random text";
+        inputToUpperCase();
+        fireEvent.keyUp(input);
 
-		expect(input.value).toEqual(input.value.toUpperCase());
-	});
+        expect(input.value).toEqual(input.value.toUpperCase());
+    });
 });
 
 // Exercise 9
 describe("handleSelectChange", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("handleSelectChange should be a function", () => {
-		expect(typeof handleSelectChange).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("handleSelectChange should be a function", () => {
+        expect(typeof handleSelectChange).toEqual("function");
+    });
 
-	test("should have default value item_1", () => {
-		const select = document.querySelector("#items");
+    test("should have default value item_1", () => {
+        const select = document.querySelector("#items");
 
-		expect(select.value).toEqual("item_1");
-	});
+        expect(select.value).toEqual("item_1");
+    });
 
-	test("should log select value when you change an option", () => {
-		const select = document.querySelector("#items");
-		handleSelectChange();
-		select.value = "item_2";
-		fireEvent.change(select);
+    test("should log select value when you change an option", () => {
+        const select = document.querySelector("#items");
+        handleSelectChange();
+        select.value = "item_2";
+        fireEvent.change(select);
 
-		expect(global.console.log).toHaveBeenCalledWith("item_2");
-	});
+        expect(global.console.log).toHaveBeenCalledWith("item_2");
+    });
 });
 
 // Exercise 10
 describe("submitFormHandler", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("submitFormHandler should be a function", () => {
-		expect(typeof submitFormHandler).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("submitFormHandler should be a function", () => {
+        expect(typeof submitFormHandler).toEqual("function");
+    });
 
-	test("should log an object with input name as a key and input value as a value", () => {
-		const form = document.querySelector("form");
-		const formInputs = form.querySelectorAll("input");
-		formInputs[0].value = "John";
-		formInputs[1].value = "Smith";
-		const result = {
-			firstName: "John",
-			lastName: "Smith"
-		};
+    test("should log an object with input name as a key and input value as a value", () => {
+        const form = document.querySelector("form");
+        const formInputs = form.querySelectorAll("input");
+        formInputs[0].value = "John";
+        formInputs[1].value = "Smith";
+        const result = {
+            firstName: "John",
+            lastName: "Smith"
+        };
 
-		submitFormHandler();
-		form.submit();
+        submitFormHandler();
+        form.submit();
 
-		expect(global.console.log).toHaveBeenCalledWith(result);
-	});
+        expect(global.console.log).toHaveBeenCalledWith(result);
+    });
 });
 
 // Exercise 11
 describe("handleScroll", () => {
-	beforeEach(() => {
-		jest.clearAllMocks();
-	});
-	test("handleScroll should be a function", () => {
-		expect(typeof handleScroll).toEqual("function");
-	});
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+    test("handleScroll should be a function", () => {
+        expect(typeof handleScroll).toEqual("function");
+    });
 
-	test("should log window vertical scroll position", () => {
-		handleScroll();
-		fireEvent.scroll(window);
+    test("should log window vertical scroll position", () => {
+        handleScroll();
+        fireEvent.scroll(window);
 
-		expect(global.console.log).toHaveBeenCalled();
-	});
+        expect(global.console.log).toHaveBeenCalled();
+    });
 });

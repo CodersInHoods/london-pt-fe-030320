@@ -38,7 +38,7 @@ function hoverOver() {
  * and log a message in the console
  */
 function handleLeave() {
-    a.addEventListener("mouseleave", () => {
+    a.addEventListener("mouseout", () => {
         console.log("a message for the leaving mouses");
     })
 }
@@ -66,11 +66,10 @@ function focusOnMe() {
  */
 
 
-function clickElsewhere() {
+function clickSomewhereElse() {
     input.addEventListener("focus", (event) => {
         targetEl = event.target;
         document.addEventListener("click", (eve) => {
-            console.log("clicked")
             if (targetEl !== eve.target) {
                 console.log("somewhere else")
             }
@@ -78,6 +77,14 @@ function clickElsewhere() {
     })
 }
 
+function clickElsewhere() {
+    input.addEventListener("focus", (event) => {
+        input.addEventListener("blur", () => {
+            console.log("somewhere else")
+
+        })
+    })
+}
 /**
  * Exercise 6
  *
@@ -88,7 +95,7 @@ function clickElsewhere() {
 
 function pressAKey() {
     input.addEventListener("focus", () => {
-        input.addEventListener("keydown", (eve) => {
+        input.addEventListener("keyDown", (eve) => {
             console.log("key pressed: " + eve.key)
         })
     })
@@ -103,7 +110,7 @@ function pressAKey() {
  */
 function releaseAKey() {
     input.addEventListener("focus", () => {
-        input.addEventListener("keyup", (eve) => {
+        input.addEventListener("keyUp", (eve) => {
             console.log("key pressed: " + eve.key)
 
         })
@@ -119,8 +126,8 @@ function releaseAKey() {
  */
 function inputToUpperCase() {
     input.addEventListener("focus", (event) => {
-        input.addEventListener("keydown", () => {
-            input.addEventListener("keyup", (eve) => {
+        input.addEventListener("keyDown", () => {
+            input.addEventListener("keyUp", (eve) => {
                 text = eve.target;
                 text.value = text.value.toUpperCase();
 
