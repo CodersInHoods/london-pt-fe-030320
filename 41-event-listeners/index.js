@@ -136,6 +136,13 @@ function inputToUpperCase() {
  * create a function {handleSelectChange} which will log selected option value
  * in console when you select an option in "select" with id "items"
  */
+items = document.querySelector("#items");
+
+function handleSelectChange() {
+    items.addEventListener("change", () => {
+        console.log(items.value)
+    })
+}
 
 /**
  * Exercise 10
@@ -144,10 +151,28 @@ function inputToUpperCase() {
  * on submit, build an object where property names will be input names,
  * and values, input values and log it in the console
  */
+const formInput = document.querySelectorAll("form > input")
+const form = document.querySelector("form");
 
+function submitFormHandler() {
+    form.addEventListener("submit", () => {
+        event.preventDefault();
+        const object = {};
+        for (key of formInput) {
+            object[key.name] = key.value;
+        }
+        console.log(object);
+    })
+}
 /**
  * Exercise 11
  *
  * create a function {handleScroll} which will get window vertical scroll position
  * on scroll, and log it in the console
  */
+
+const handleScroll = () => {
+    document.addEventListener("scroll", () => {
+        console.log(window.scrollY);
+    })
+}
