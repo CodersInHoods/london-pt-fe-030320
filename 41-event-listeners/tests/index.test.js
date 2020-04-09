@@ -183,14 +183,14 @@ const form = document.querySelector("form");
 
 function submitFormHandler() {
     form.addEventListener("submit", (event) => {
-        const form = event.target;
-        const inputs = form.querySelectorAll('input');
-
         event.preventDefault();
+        const inputs = event.target.querySelectorAll('input');
         const object = {};
+
         for (let input of inputs) {
             object[input.name] = input.value;
         }
+
         console.log(object);
     })
 }
