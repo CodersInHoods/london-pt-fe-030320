@@ -99,23 +99,20 @@ function focusOnMe() {
  */
 
 
-function clickSomewhereElse() {
-    input.addEventListener("focus", (event) => {
-        targetEl = event.target;
-        document.addEventListener("click", (eve) => {
-            if (targetEl !== eve.target) {
-                console.log("somewhere else")
-            }
-        })
-    })
-}
+// function clickSomewhereElse() {
+//     input.addEventListener("focus", (event) => {
+//         targetEl = event.target;
+//         document.addEventListener("click", (eve) => {
+//             if (targetEl !== eve.target) {
+//                 console.log("somewhere else")
+//             }
+//         })
+//     })
+// }
 
 function clickElsewhere() {
-    input.addEventListener("focus", (event) => {
-        input.addEventListener("blur", () => {
-            console.log("somewhere else")
-
-        })
+    input.addEventListener("blur", () => {
+        console.log("somewhere else")
     })
 }
 /**
@@ -127,10 +124,8 @@ function clickElsewhere() {
  */
 
 function pressAKey() {
-    input.addEventListener("focus", () => {
-        input.addEventListener("keyDown", (eve) => {
-            console.log("key pressed: " + eve.key)
-        })
+    input.addEventListener("keydown", () => {
+        console.log("key pressed")
     })
 }
 
@@ -142,11 +137,9 @@ function pressAKey() {
  * and then press any key and release it
  */
 function releaseAKey() {
-    input.addEventListener("focus", () => {
-        input.addEventListener("keyUp", (eve) => {
-            console.log("key pressed: " + eve.key)
+    input.addEventListener("keyup", (eve) => {
+        console.log("key pressed: " + eve.key)
 
-        })
     })
 }
 
@@ -158,15 +151,9 @@ function releaseAKey() {
  * and then press any key and release it
  */
 function inputToUpperCase() {
-    input.addEventListener("focus", (event) => {
-        input.addEventListener("keyDown", () => {
-            input.addEventListener("keyUp", (eve) => {
-                text = eve.target;
-                text.value = text.value.toUpperCase();
-
-            })
-
-        })
+    input.addEventListener("keyup", (eve) => {
+        text = eve.target;
+        text.value = text.value.toUpperCase();
     })
 }
 
@@ -191,15 +178,18 @@ function handleSelectChange() {
  * on submit, build an object where property names will be input names,
  * and values, input values and log it in the console
  */
-const formInput = document.querySelectorAll("form > input")
+
 const form = document.querySelector("form");
 
 function submitFormHandler() {
-    form.addEventListener("submit", () => {
+    form.addEventListener("submit", (event) => {
+        const form = event.target;
+        const inputs = form.querySelectorAll('input');
+
         event.preventDefault();
         const object = {};
-        for (key of formInput) {
-            object[key.name] = key.value;
+        for (let input of inputs) {
+            object[input.name] = input.value;
         }
         console.log(object);
     })
@@ -212,7 +202,7 @@ function submitFormHandler() {
  */
 
 const handleScroll = () => {
-    document.addEventListener("scroll", () => {
+    window.addEventListener("scroll", () => {
         console.log(window.scrollY);
     })
 }

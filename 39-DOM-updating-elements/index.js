@@ -12,7 +12,6 @@ const h1 = document.querySelector("h1");
 
 function setTitle(string) {
     h1.innerText = string;
-    return h1.innerHTML;
 }
 /**
  * Exercise 2
@@ -42,15 +41,12 @@ const prependToTitle = string => h1.innerText = string + h1.innerText;
  * create a function {setInnerHTMLForDiv} which takes a tag name and text as
  * arguments and uses innerHTML to create an element inside the div, and the
  * text is displayed inside that element. The element should the tag name
- * passed into the function
+ * passed into the function`
  */
 const div = document.querySelector("div");
 
 function setInnerHTMLForDiv(tagName, inText) {
-    const newTag = document.createElement(tagName);
-    newTag.innerText = inText;
-    div.appendChild(newTag);
-    return tagName;
+    div.innerHTML = `<${tagName}>${inText}</${tagName}`;
 }
 
 
