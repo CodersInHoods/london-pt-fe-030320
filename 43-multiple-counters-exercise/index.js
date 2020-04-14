@@ -56,9 +56,8 @@ function createTimerEl(num) {
 
     function addmili(inter) {
         miliseconds += inter;
-        console.log(miliseconds);
-        timer.innerHTML = `${seconds} <span>${miliseconds /10 }</span>`
-        if (miliseconds === 950) {
+        timer.innerHTML = `${seconds}<span>${miliseconds /10 }</span>`
+        if (miliseconds === 1000) {
             seconds++;
             miliseconds = 0;
         }
@@ -67,7 +66,7 @@ function createTimerEl(num) {
     const reset = () => {
         seconds = 0;
         miliseconds = 0;
-        timer.innerHTML = `${seconds} <span>${miliseconds /10 }</span>`;
+        timer.innerHTML = `${seconds}<span>${miliseconds /10 }</span>`;
     }
 
     timers[num] = setInterval(addmili, 10, 10);
@@ -75,6 +74,7 @@ function createTimerEl(num) {
     removebtn.addEventListener("click", event => {
         stop(num);
         event.currentTarget.parentNode.remove();
+        timersCount--
     })
 
     resetbtn.addEventListener("click", reset);

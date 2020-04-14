@@ -1,0 +1,16 @@
+{
+    "name": "algoworks",
+    "version": "1.0.0",
+    "main": "adj.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^25.3.0"
+    },
+    "dependencies": {},
+    "description": ""
+}
