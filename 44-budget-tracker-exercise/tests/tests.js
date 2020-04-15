@@ -7,6 +7,10 @@ const wait = (time) => new Promise((resolve) => setTimeout(resolve, time));
 const productDivs = document.querySelectorAll("#products > div");
 const remainingBudgetSpan = document.querySelector("#remaining > span");
 
+if (!global.budget) {
+  global.budget = 50;
+}
+
 describe("1. Products rendered", () => {
   test("4 products rendered", () => {
     expect(productDivs.length).toBe(products.length);
@@ -71,6 +75,9 @@ describe("3. Budget updates", () => {
     fireEvent.input(firstDiv.querySelector("select"), {
       target: { value: "1" },
     });
+    fireEvent.change(firstDiv.querySelector("select"), {
+      target: { value: "1" },
+    });
 
     expect(remainingBudgetSpan.innerHTML).toBe(
       `£${budget - firstProduct.price}`
@@ -87,6 +94,9 @@ describe("4. Budget limit", () => {
       fireEvent.input(productDiv.querySelector("select"), {
         target: { value: "0" },
       });
+      fireEvent.change(productDiv.querySelector("select"), {
+        target: { value: "0" },
+      });
     })
   })
 
@@ -95,6 +105,12 @@ describe("4. Budget limit", () => {
       target: { value: "3" },
     });
     fireEvent.input(secondDiv.querySelector("select"), {
+      target: { value: "4" },
+    });
+    fireEvent.change(firstDiv.querySelector("select"), {
+      target: { value: "3" },
+    });
+    fireEvent.change(secondDiv.querySelector("select"), {
       target: { value: "4" },
     });
 
@@ -108,6 +124,12 @@ describe("4. Budget limit", () => {
       target: { value: "3" },
     });
     fireEvent.input(secondDiv.querySelector("select"), {
+      target: { value: "4" },
+    });
+    fireEvent.change(firstDiv.querySelector("select"), {
+      target: { value: "3" },
+    });
+    fireEvent.change(secondDiv.querySelector("select"), {
       target: { value: "4" },
     });
 
