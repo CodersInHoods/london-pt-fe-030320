@@ -8,7 +8,6 @@ const timers = [];
 addCounterEl.addEventListener(`click`, () => {
     if (timersCount < 5) {
         createTimerEl(timersCount);
-        timers.push(timersCount);
     }
 });
 /**
@@ -22,7 +21,7 @@ addCounterEl.addEventListener(`click`, () => {
  * can see in example - timer_$)
  */
 
-function createTimerEl(num) {
+function createTimerEl(num) { //create timer with number of counter.
     let seconds = 0;
     let miliseconds = 0;
 
@@ -49,10 +48,12 @@ function createTimerEl(num) {
     buttonStop.innerText = "Stop";
     buttons.appendChild(buttonStop);
     timersCount++
+    timers.push(num);
     const timer = document.querySelector(`.timer_${num} h3`);
     const stopbtn = document.querySelector(`.timer_${num} .stop`);
     const resetbtn = document.querySelector(`.timer_${num} .reset`);
     const removebtn = document.querySelector(`.timer_${num} .remove`);
+    console.log(timers);
 
     function addmili(inter) {
         miliseconds += inter;
@@ -74,6 +75,12 @@ function createTimerEl(num) {
     removebtn.addEventListener("click", event => {
         stop(num);
         event.currentTarget.parentNode.remove();
+        for (let index = 0; index < timers.length; index++) {
+            const element = timers[index];
+            if (element === timers[num]) {
+                timers.splice(index, 1);
+            }
+        }
         timersCount--
     })
 
