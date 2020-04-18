@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        #products {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #products > div {
+            margin: 1em;
+            cursor: pointer;
+        }
+        #products > div:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="filters">
+            <div id="colors" class="checkboxes">
+                <h3>Colors</h3>
+            </div>
+            <div id="categories" class="checkboxes">
+                <h3>Categories</h3>
+            </div>
+            <div id="price-range">
+                <h3>Price range</h3>
+                <input name="from" type="number" placeholder="from"/>
+                <input name="to" type="number" placeholder="to"/>
+            </div>
+            <button>Apply filters</button>
+        </div>
+        <div id="sort-options">
+            <h3>Sort options</h3>
+            <label>
+                Default
+                <input type="radio" name="sort" value="DEFAULT" checked/>
+            </label>
+            <label>
+                Price: low to high
+                <input type="radio" name="sort" value="PRICE_ASC"/>
+            </label>
+            <label>
+                Price: high to low
+                <input type="radio" name="sort" value="PRICE_DES"/>
+            </label>
+        </div>
+        <h3 id="cart">Cart: 0</h3>
+    </div>
+    <main>
+        <div id="products"></div>
+        <div id="product-details" style="display: none;">
+            <h3>NAME</h3>
+            <div class="carousel">
+                <img />
+                <button><</button>
+                <button>></button>
+            </div>
+            <p>£price</p>
+            <p>description</p>
+            <p>color</p>
+            <p>category</p>
+            <button id="add-to-cart">Add to cart</button>
+            <button id="back">Back to all products</button>
+        </div>
+    </main>
+    <script src="products.js"></script>
+    <script src="rendering.js"></script>
+    <script src="logic.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

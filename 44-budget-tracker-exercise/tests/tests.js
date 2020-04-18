@@ -7,40 +7,41 @@ const wait = (time) => new Promise((resolve) => setTimeout(resolve, time));
 const productDivs = document.querySelectorAll("#products > div");
 const remainingBudgetSpan = document.querySelector("#remaining > span");
 
-if (!global.budget) {
-  global.budget = 50;
-}
-
 describe("1. Products rendered", () => {
   test("4 products rendered", () => {
     expect(productDivs.length).toBe(products.length);
   });
 
   test("each product div contains an img tag", () => {
+    expect(productDivs.length).toBeGreaterThan(0);
     productDivs.forEach((productDiv) => {
       expect(Boolean(productDiv.querySelector("img"))).toBe(true);
     });
   });
 
   test("each product div contains an h3 tag", () => {
+    expect(productDivs.length).toBeGreaterThan(0);
     productDivs.forEach((productDiv) => {
       expect(Boolean(productDiv.querySelector("h3"))).toBe(true);
     });
   });
 
   test("each product div contains an p tag", () => {
+    expect(productDivs.length).toBeGreaterThan(0);
     productDivs.forEach((productDiv) => {
       expect(Boolean(productDiv.querySelector("p"))).toBe(true);
     });
   });
 
   test("each product div contains a select tag", () => {
+    expect(productDivs.length).toBeGreaterThan(0);
     productDivs.forEach((productDiv) => {
       expect(Boolean(productDiv.querySelector("select"))).toBe(true);
     });
   });
 
   test("each product div contains elements in the correct order", () => {
+    expect(productDivs.length).toBeGreaterThan(0);
     productDivs.forEach((productDiv) => {
       expect([...productDiv.children].map((el) => el.tagName)).toEqual([
         "IMG",
@@ -80,7 +81,7 @@ describe("3. Budget updates", () => {
     });
 
     expect(remainingBudgetSpan.innerHTML).toBe(
-      `£${budget - firstProduct.price}`
+      "£37.01"
     );
   });
 });
@@ -114,9 +115,7 @@ describe("4. Budget limit", () => {
       target: { value: "4" },
     });
 
-    expect(remainingBudgetSpan.innerHTML).toBe(
-      `£${(budget - firstProduct.price * 3).toFixed(2)}`
-    );
+    expect(remainingBudgetSpan.innerHTML).toBe("£11.03");
   });
 
   test("selecting products over budget displays error message for 3 seconds", async () => {
