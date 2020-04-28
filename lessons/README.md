@@ -13,3 +13,5 @@
 [Algorithms and Testing](https://youtu.be/y347VU2Hbf8)
 
 [Project Features](https://youtu.be/BLW0poqnoXM)
+
+[Async and Fetch](https://youtu.be/t046UQtqPGU)
