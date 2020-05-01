@@ -1,0 +1,17 @@
+{
+  "name": "test-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "concat": "concat -o ./tests/index.test.js ./index.js ./tests/tests.js ",
+    "test": "npm run concat && jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "jest": "^25.1.0"
+  }
+}
