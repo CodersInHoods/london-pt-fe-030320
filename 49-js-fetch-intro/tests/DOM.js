@@ -1,3 +1,12 @@
+Object.defineProperty(global.Element.prototype, "innerText", {
+  get() {
+    return this.textContent;
+  },
+  set(str) {
+    this.innerHTML = this.textContent = str;
+  },
+});
+
 document.body.innerHTML = `
 <h1>API URL checker</h1>
 <form action="#">
