@@ -1,9 +1,9 @@
 const ingredients = [
-  { name: "carrot", time: 500 },
-  { name: "potato", time: 1000 },
-  { name: "onion", time: 250 },
-  { name: "celery", time: 150 },
-  { name: "tomato", time: 100 },
+    { name: "carrot", time: 500 },
+    { name: "potato", time: 1000 },
+    { name: "onion", time: 250 },
+    { name: "celery", time: 150 },
+    { name: "tomato", time: 100 },
 ];
 
 /**
@@ -21,6 +21,11 @@ const ingredients = [
  *
  */
 
+const asyncCookIngredient = async({ name, time }) => {
+    return await new Promise((resolve) => {
+        setTimeout(() => { resolve({ name, time }) }, time);
+    })
+}
 
 /**
  * Exercise 2
@@ -41,3 +46,25 @@ const ingredients = [
  * }
  *
  */
+
+
+const asyncCookMeal = async(ingredientsToCook) => {
+    return await new Promise((resolve) => {
+        const array = ingredientsToCook.map(el => asyncCookIngredient(el));
+        Promise.all(array).then((array) => {
+            const ingredientNames = array.map(el => el.name);
+            const timeArray = array.map(el => parseInt(el.time));
+            const totalTime = timeArray.reduce((a, b) => a + b);
+            console.log(totalTime);
+            const obj = {
+                ingredientNames: ingredientNames,
+                totalTime: totalTime
+            };
+            resolve(obj);
+        });
+
+    })
+}
+
+
+asyncCookMeal(ingredients).then((obj) => console.log(obj));
