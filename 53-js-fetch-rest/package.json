@@ -1,0 +1,29 @@
+{
+	"name": "test-exercise",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"concat": "concat -o ./tests/index.test.js ./tests/setup.js ./index.js ./tests/tests.js ",
+		"test": "npm run concat && jest"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run test",
+			"pre-push": "npm install && npm run test"
+		}
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@testing-library/dom": "^7.2.0",
+		"concat": "^1.0.3",
+		"husky": "^4.2.3",
+		"jest": "^25.1.0"
+	},
+	"dependencies": {
+		"json-server": "^0.16.1",
+		"node-fetch-polyfill": "^2.0.6"
+	}
+}
