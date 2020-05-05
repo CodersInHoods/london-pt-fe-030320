@@ -18,6 +18,18 @@ const input = document.querySelector("input");
  * `Request failed with status code: {errorCode}`
  */
 
+const getResponse = (url) => {
+    fetch(url).then((response) => {
+        console.log(response);
+        if (response.status >= 200 && response.status < 300) {
+            result.innerText = "Valid link!";
+        } else {
+            result.innerText = `Request failed with status code: ${responses.status}`;
+        }
+
+    })
+}
+
 /**
  * Description of the application:
  *
@@ -31,3 +43,27 @@ const input = document.querySelector("input");
  * 5. When I focus on input, it should clear my input and hide
  * {result}
  */
+const Checkresponse = (url) => {
+    fetch(url).then((response) => {
+        console.log("bloop");
+        console.log(response);
+        if (response.status >= 200 && response.status < 300) {
+            result.innerHTML = `The URL is valid, you can visit it 
+            <a href="${url}">here</a>`;
+        } else {
+            result.innerText = `Request failed with status code: ${response.status}`;
+        }
+
+    })
+}
+input.addEventListener("focus", () => {
+    input.value = "";
+    result.style.display = "none"
+})
+
+form.addEventListener("submit", (el) => {
+    console.log("submitted", el);
+    const url = document.querySelector("form > input").value;
+    result.style.display = null;
+    Checkresponse(url);
+})
