@@ -23,6 +23,7 @@
     "jest": "^25.1.0"
   },
   "dependencies": {
+    "node-fetch": "^2.6.0",
     "serve": "^11.3.0"
   }
 }

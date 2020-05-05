@@ -2,10 +2,12 @@ const {
 	fireEvent,
 } = require("@testing-library/dom/dist/@testing-library/dom.umd.js");
 
+const { Response } = require("node-fetch");
+
 // Exercise #
 describe("API url check", () => {
 	test("should show a valid message", async () => {
-		fetch = () => new Promise((resolve) => resolve({ status: 200 }));
+		fetch = () => new Promise((resolve) => resolve(new Response()));
 
 		input.value = "https://cat-fact.herokuapp.com/facts";
 		fireEvent.submit(form);
@@ -18,7 +20,7 @@ describe("API url check", () => {
 	});
 
 	test("should show an error message", async () => {
-		fetch = () => new Promise((resolve) => resolve({ status: 400 }));
+		fetch = () => new Promise((resolve) => resolve(new Response("bad thing", {status: 400})));
 
 		input.value = "https://cat-fact.herokuapp.com/fact";
 
