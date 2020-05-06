@@ -12,6 +12,7 @@ describe("members", () => {
 	test("should filter results with input", async () => {
 		searchEl.value = "ea";
 		fireEvent.keyUp(searchEl);
+		fireEvent.input(searchEl);
 		const filtered = members.filter((member) =>
 			member.name.toLowerCase().match("ea")
 		);
