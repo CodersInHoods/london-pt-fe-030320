@@ -18,6 +18,19 @@ const input = document.querySelector("input");
  * string in {.result} element
  */
 
+const getResponse = (URL) => {
+    fetch(URL)
+        .then((response) => response.text())
+        .then((responseText) => {
+            result.innerText = responseText;
+        })
+};
+
+
+input.addEventListener("focus", () => {
+    input.value = "";
+    result.innerText = "";
+})
 
 /**
  * Description of the application:
@@ -28,3 +41,9 @@ const input = document.querySelector("input");
  * 3. focus on input, clearing my previous input and hiding {.result} element
  */
 
+form.addEventListener("submit", (el) => {
+    console.log("submitted", el);
+    const url = input.value;
+    getResponse(url);
+    result.style.visibility = "visible";
+});
