@@ -17,7 +17,6 @@ const input = document.querySelector("input");
  * When you get a response, return an array of facts.
  */
 
-
 /**
  * Description of the application:
  *
