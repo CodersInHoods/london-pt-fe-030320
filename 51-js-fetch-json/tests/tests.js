@@ -6,7 +6,7 @@ const {
 describe("fetchData", () => {
 	test("should call fetch", () => {
 		const prom = {
-			then: jest.fn(() => ({all: []}))
+			then: jest.fn(() => (Promise.resolve({all: []})))
 		}
 		fetch = () => prom
 		fetchData();
