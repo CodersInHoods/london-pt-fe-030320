@@ -13,7 +13,7 @@ const baseURL = "http://localhost:3000";
 /**
  * Exercise 1
  *
- * create an async function {getComments}, which takes {url} as an argument,
+ * create an async function {getComments}, which 
  * gets data from URL and returns the data as JS objects
  *
  * Note: test this function with an URL from your json-server API
@@ -61,10 +61,10 @@ const baseURL = "http://localhost:3000";
 /**
  * Exercise 5
  *
- * create an async function {deleteComment}, which takes {url} as an argument,
- * and delete selected comment from DB.
+ * create an async function {deleteComment}, which takes {comment} as an argument,
+ * and deletes the selected comment from DB.
  * This function should return "Deleted!" if successful,
- * or "That could not be deleted!" in not.
+ * or "That could not be deleted!" if not.
  *
  * Don't forget to handle errors.
  */
