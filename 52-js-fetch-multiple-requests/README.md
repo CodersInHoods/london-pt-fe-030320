@@ -15,6 +15,7 @@ const moveAccuracies = [];
 
 const getAllPokemonMoveAccuracy = async (pokemonName) => {
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+  console.log(url);
   const pokemonData = await fetch(url).then((response) => response.json());
 
   pokemonData.moves.forEach(async (moveObject) => {
