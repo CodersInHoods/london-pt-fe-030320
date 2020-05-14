@@ -1,0 +1,40 @@
+{
+  "name": "test-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "test:dev": "npm run test -- --watch",
+    "build": "npx webpack --config webpack.config.prod.js --mode=production",
+    "watch": "npx webpack --watch",
+    "start:dev": "webpack-dev-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.5",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "clean-webpack-plugin": "^1.0.0",
+    "concat": "^1.0.3",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "fs": "0.0.1-security",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^4.0.0-beta.5",
+    "husky": "^4.2.3",
+    "image-webpack-loader": "^4.6.0",
+    "jest": "^24.9.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "path": "^0.12.7",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
