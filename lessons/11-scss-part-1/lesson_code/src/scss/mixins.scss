@@ -1,0 +1,18 @@
+@mixin resetList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+@mixin hocus() {
+	&:hover,
+	&:focus {
+		@content;
+	}
+}
+
+@mixin btn($color) {
+    padding: 1em 2.5em;
+    border: 3px solid $color;
+    font-size: 14px;
+}

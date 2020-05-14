@@ -1,0 +1,9 @@
+$lightGrey: #f6f6f6;
+
+@function greenIsh($opacity) {
+    @return rgba(141, 162, 164, $opacity);
+}
+
+@function darkBlue($opacity) {
+    @return rgba(6, 50, 82, $opacity);
+}
