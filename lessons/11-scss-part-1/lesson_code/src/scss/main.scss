@@ -1,0 +1,91 @@
+* {
+	box-sizing: border-box;
+}
+
+main {
+	min-height: 100vh;
+	background: url("../img/forest-371223_1920.jpg") center center;
+	background-size: cover;
+	position: relative;
+
+	nav {
+		display: flex;
+		padding: 1em 2em;
+		justify-content: space-between;
+		color: #fff;
+
+		.logo {
+		}
+
+		.nav_list {
+			@include resetList();
+			display: flex;
+			align-items: center;
+
+			li {
+				a {
+					position: relative;
+					display: inline-block;
+					color: #fff;
+					text-decoration: none;
+					padding: 1em 0;
+					margin: 0 1em;
+					overflow: hidden;
+
+					&:hover {
+						&::before {
+							width: 100%;
+						}
+					}
+
+					&::before {
+						content: "";
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						width: 0;
+						display: block;
+						height: 3px;
+						transition: 0.2s;
+						background-color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	.content {
+		width: 90%;
+		max-width: 600px;
+		font-size: 1.5em;
+		color: #fff;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		h1 {
+			text-align: center;
+		}
+
+        .buttons {
+            display: flex;
+            justify-content: space-evenly;
+            
+            button {
+                @include btn(greenIsh(1));
+                
+                &.green {
+                    background-color: greenIsh(1);
+                    color: #fff;
+                }
+    
+                &.transparent {
+                    background-color: transparent;
+                    color: #fff;
+                }
+            }
+        }
+	    
+	}
+}
