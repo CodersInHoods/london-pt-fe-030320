@@ -23,3 +23,5 @@
 [Typescript Intro and More OO](https://youtu.be/hMy8jhcPOd0)
 
 [Frameworks and React Intro](https://youtu.be/q9bKR6541Wk)
+
+[React State](https://youtu.be/_hVqYM9xccE)
