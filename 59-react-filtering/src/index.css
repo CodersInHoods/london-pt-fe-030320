@@ -1,0 +1,74 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #b3b0b0;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+.App {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  width: 90%;
+  max-width: 500px;
+  padding: 0.25em 0;
+  color: #fff;
+  font-size: 1em;
+  margin: 1em;
+  outline: none;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+input:focus,
+input:active {
+  border-bottom: 2px solid #f1ed00;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+	display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+  grid-auto-rows: auto;
+  grid-gap: 1em;
+  width: 90%;
+  max-width: 1000px;
+}
+
+ul li {
+	background-color: #fff;
+	color: #626262;
+	padding: 0.5em 1em;
+	display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  transition: .2s;
+  cursor: pointer;
+}
+
+ul li:hover {
+  background-color: #000;
+  color: #f1ed00;
+}
+
+.company {
+	text-transform: capitalize;
+}
