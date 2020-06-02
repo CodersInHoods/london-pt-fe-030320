@@ -25,3 +25,5 @@
 [Frameworks and React Intro](https://youtu.be/q9bKR6541Wk)
 
 [React State](https://youtu.be/_hVqYM9xccE)
+
+[React Props](https://youtu.be/eDQz9q3Juvk)
