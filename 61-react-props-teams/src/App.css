@@ -1,0 +1,13 @@
+.app {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
