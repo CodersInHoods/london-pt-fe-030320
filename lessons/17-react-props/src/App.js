@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
-import RecipeList from "./RecipeList";
-import Nav from "./Nav";
-import Home from "./Home";
+import RecipePage from "./pages/RecipePage";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import CounterPage from "./pages/CounterPage";
 
 const PAGES = {
   MESSAGE: 1,
@@ -47,23 +48,18 @@ function App() {
         ) : null}
 
         {currentPage === PAGES.COUNTER ? (
-          <div>
-            <p>Counter value: {counter}</p>
-            <p
-              className={doubler ? "enabled" : "disabled"}
-              onClick={toggleDoubler}
-            >
-              Doubler enabled? {doubler ? "YES" : "NO!"}
-            </p>
-            <button
-              onClick={() => setCounter(doubler ? counter * 2 : counter + 1)}
-            >
-              +
-            </button>
-          </div>
+          <CounterPage
+            setCounter={setCounter}
+            toggleDoubler={toggleDoubler}
+            counter={counter}
+
+            // {...{ setCounter, toggleDoubler, counter }}
+
+            isDoublerEnabled={doubler}
+          />
         ) : null}
 
-        {currentPage === PAGES.RECIPES ? <RecipeList /> : null}
+        {currentPage === PAGES.RECIPES ? <RecipePage /> : null}
       </header>
     </div>
   );

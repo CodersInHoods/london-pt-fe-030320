@@ -19,7 +19,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -49,5 +48,9 @@ p.disabled {
 nav {
   min-height: 1em;
   width: 100vw;
-  background-color: blue;
+  background-color: rgb(184, 184, 216);
+}
+
+nav > p {
+  cursor: pointer;
 }
