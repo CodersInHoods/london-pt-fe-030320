@@ -1,0 +1,15 @@
+.app {
+    max-width: 30em;
+    margin: auto;
+    padding: 1em;
+    border: grey solid 1px;
+    background: white;
+}
+
+ul > li > span {
+    width: 6em;
+    display: inline-block;
+}
+ul > li > input {
+    width: 4em;
+}
