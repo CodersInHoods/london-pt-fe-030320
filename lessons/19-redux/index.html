@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- CDN to include Redux code in our app -->
+    <script src="https://unpkg.com/redux@4.0.4/dist/redux.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: 2em;
+        background: #ede2ef;
+        margin: auto;
+        max-width: 25em;
+      }
+      button {
+        font-size: 1em;
+        background: rgb(213, 255, 213);
+        border-radius: 0.5em;
+        min-width: 5em;
+        min-height: 2em;
+        cursor: pointer;
+        border: solid #00a800 0.1em;
+      }
+      button:first-child {
+        border-radius: 0.5em 0 0 0.5em;
+        border-right: none;
+      }
+      button:last-child {
+        border-radius: 0 0.5em 0.5em 0;
+      }
+      .buttons {
+        display: flex;
+        margin-top: 1em;
+      }
+      span {
+        background: #80808057;
+        border: solid grey 0.1em;
+        min-width: 1.25em;
+        min-height: 1.25em;
+        display: inline-block;
+        text-align: center;
+        line-height: 1.25em;
+        font-size: 1.25em;
+        border-radius: 1em;
+        padding: 0.25em;
+      }
+      span.up {
+        background: rgb(87, 202, 87);
+      }
+      span.down {
+        background: rgb(202, 87, 87);
+      }
+      body > div {
+        border: solid black 1px;
+        border-radius: 0.5em;
+        margin-bottom: 1em;
+        padding: 1em;
+      }
+      div > p {
+        margin: 0;
+      }
+    </style>
+    <title>redux</title>
+  </head>
+  <body>
+    <div>
+      <p>Counter: <span id="counter-value">0</span></p>
+      <div class="buttons">
+        <button id="up">counter++</button>
+        <button id="down">counter--</button>
+      </div>
+    </div>
+    <div>
+      <p>Key pressed: <span id="key-value">press a key!</span></p>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

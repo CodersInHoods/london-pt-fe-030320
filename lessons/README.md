@@ -29,3 +29,5 @@
 [React Props](https://youtu.be/eDQz9q3Juvk)
 
 [React useEffect, custom hooks](https://youtu.be/pSryGLbeDek)
+
+[Redux](https://youtu.be/IkD6MtDx0kU)
