@@ -30,4 +30,4 @@
 
 [React useEffect, custom hooks](https://youtu.be/pSryGLbeDek)
 
-[Redux](https://youtu.be/cV8-e9wDA9w)
+[Redux](https://youtu.be/OKUUWFxPZss)
